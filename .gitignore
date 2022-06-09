@@ -402,3 +402,4 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+UI/obj/Debug/net6.0-windows/UI.GeneratedMSBuildEditorConfig.editorconfig
