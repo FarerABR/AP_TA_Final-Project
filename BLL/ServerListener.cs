@@ -4,15 +4,15 @@ using System.Net;
 
 namespace BLL
 {
-	public static class ServerListener
+	public  class ServerListener
 	{
-		private static Socket ServerSck;
-		private static Socket MainSck;
-		private static IPEndPoint EndPoint;
+		private  Socket ServerSck;
+		private  Socket MainSck;
+		private  IPEndPoint EndPoint;
 
-		private static bool IsRunnig = false;
+		private  bool IsRunnig = false;
 
-		public static void StartServer(string _Ip, int _port)
+		public  void StartServer(string _Ip, int _port)
 		{
 			ServerSck = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
 			EndPoint = new IPEndPoint(IPAddress.Parse(_Ip), _port);
@@ -21,7 +21,7 @@ namespace BLL
 			ServerSck.BeginAccept(AcceptCallBack, null);
 		}
 
-		public static void ReStartServer()
+		public  void ReStartServer()
 		{
 			if (IsRunnig)
 			{
@@ -30,13 +30,13 @@ namespace BLL
 			ServerSck.BeginAccept(AcceptCallBack, null);
 		}
 
-		public static void AcceptCallBack(IAsyncResult ar)
+		public  void AcceptCallBack(IAsyncResult ar)
 		{
 			MainSck = ServerSck.EndAccept(ar);
 			IsRunnig = true;
 		}
 
-		public static void StopServer()
+		public  void StopServer()
 		{
 			if (!IsRunnig)
 			{
