@@ -24,5 +24,16 @@ namespace UI
         {
             InitializeComponent();
         }
+
+        private void btn_Exit_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void Username_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            DragMove();
+        }
+
     }
 }
