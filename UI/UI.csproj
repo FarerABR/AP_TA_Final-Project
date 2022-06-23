@@ -6,4 +6,10 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Fonts\" />
+    <Folder Include="MVVM\View model\" />
+    <Folder Include="MVVM\View\" />
+  </ItemGroup>
+
 </Project>
