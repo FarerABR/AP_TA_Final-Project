@@ -11,56 +11,118 @@
 		Background="Transparent"
 		AllowsTransparency="True">
 
-    <Window.Resources>
-        <ControlTemplate x:Key="NoMouseOverButtonTemplate" 
-                  TargetType="Button">
-            <Border Background="{TemplateBinding Background}"
-           BorderBrush="{TemplateBinding BorderBrush}"
-           BorderThickness="{TemplateBinding BorderThickness}">
-                <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                       VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
-            </Border>
-
-            <ControlTemplate.Triggers>
-                <Trigger Property="IsEnabled"
-              Value="False">
-                    <Setter Property="Background"
-               Value="{x:Static SystemColors.ControlLightBrush}" />
-                    <Setter Property="Foreground"
-               Value="{x:Static SystemColors.GrayTextBrush}" />
-                </Trigger>
-            </ControlTemplate.Triggers>
-        </ControlTemplate>
-    </Window.Resources>
-
     <Border Background="#272537"
 			CornerRadius="20">
         <Grid>
+
+            <!-- Definition -->
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="150"/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
             <Grid.RowDefinitions>
+                <RowDefinition Height="25"/>
                 <RowDefinition Height="75"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            
-            <StackPanel Grid.Row="0">
+            <!-- Definition -->
+
+            <!-- Head -->
+            <Border Grid.ColumnSpan="2"
+                    x:Name="brd_Head"
+					Background="#FF151838"
+					CornerRadius="20,20,0,0"
+                    MouseLeftButtonDown="brd_Head_MouseLeftButtonDown">
+
+                <Grid HorizontalAlignment="Stretch">
+                    <Label Content="CATCHit"
+                           Foreground="Gray"
+                           FontWeight="SemiBold"
+                           Margin="10,0,0,0"/>
+
+                    <StackPanel HorizontalAlignment="Right"
+                                Orientation="Horizontal">
+
+                        <Button x:Name="btn_Minimize"
+                                Height="20"
+                                Width="20"
+                                Content="🗕"
+                                BorderThickness="0"
+                                Foreground="Gray"
+                                FontWeight="Bold"
+                                Margin="0,0,10,0" Click="btn_Minimize_Click">
+                            <Button.Style>
+                                <Style TargetType="{x:Type Button}">
+                                    <Setter Property="Background" Value="Transparent"/>
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="{x:Type Button}">
+                                                <Border Background="{TemplateBinding Background}">
+                                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                                </Border>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Background" Value="#FF4949E6"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
+                        </Button>
+
+                        <Button x:Name="btn_Exit"
+                                Height="20"
+                                Width="20"
+                                Content="❌"
+                                BorderThickness="0"
+                                Foreground="Gray"
+                                FontWeight="Bold"
+                                Margin="0,0,10,0" Click="btn_Exit_Click">
+                            <Button.Style>
+                                <Style TargetType="{x:Type Button}">
+                                    <Setter Property="Background" Value="Transparent"/>
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="{x:Type Button}">
+                                                <Border Background="{TemplateBinding Background}">
+                                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                                </Border>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Background" Value="Red"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
+                        </Button>
+                    </StackPanel>
+                </Grid>
+            </Border>
+            <!-- Head -->
+
+            <!-- Username -->
+            <StackPanel Grid.Row="1">
 
                 <TextBlock x:Name="Username"
-                   Text="Username"
+				   Text="Username"
 				   VerticalAlignment="Stretch"
 				   HorizontalAlignment="Stretch"
-                           Height="55"
+						   Height="55"
 				   Foreground="White"
 				   FontSize="22"
-				   Margin="15,20,0,0"
-                   MouseLeftButtonDown="Username_MouseLeftButtonDown" TextWrapping="NoWrap"/>
-                
-            </StackPanel>
+				   Margin="15,20,0,0"/>
 
-            <StackPanel Grid.Row="1">
+            </StackPanel>
+            <!-- Username -->
+
+            <!-- Menu -->
+            <StackPanel Grid.Row="2">
 
                 <RadioButton Content="Home"
 							 Height="50"
@@ -98,16 +160,18 @@
 							 FontSize="14"
 							 Style="{StaticResource MenuBtnStyle}"/>
 
-                <Button x:Name="btn_Exit"
-                        Content="Exit"
-                        Background="Transparent"
-                        Foreground="Red"
-                        Margin="0,220,0,0"
-                        Height="65"
-                        FontSize="20"
-                        BorderThickness="0"
-                        Template="{StaticResource NoMouseOverButtonTemplate}" Click="btn_Exit_Click"/>
+                <!-- <Button x:Name="btn_Exit"
+						Content="Exit"
+						Background="Transparent"
+						Foreground="Red"
+						Margin="0,220,0,0"
+						Height="65"
+						FontSize="20"
+						BorderThickness="0"
+						Template="{StaticResource NoMouseOverButtonTemplate}" Click="btn_Exit_Click"/> -->
             </StackPanel>
+            <!-- Menu -->
+
         </Grid>
     </Border>
 </Window>

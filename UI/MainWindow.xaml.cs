@@ -25,15 +25,20 @@ namespace UI
             InitializeComponent();
         }
 
+
+        private void brd_Head_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            DragMove();
+        }
+
         private void btn_Exit_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
 
-        private void Username_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        private void btn_Minimize_Click(object sender, RoutedEventArgs e)
         {
-            DragMove();
+            Application.Current.MainWindow.WindowState = System.Windows.WindowState.Minimized;
         }
-
     }
 }
