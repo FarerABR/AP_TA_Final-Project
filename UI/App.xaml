@@ -7,6 +7,7 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Styles/MenuBtnStyle.xaml"/>
+                <ResourceDictionary Source="Styles/HomeBtnStyle.xaml" x:Name="aaa"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

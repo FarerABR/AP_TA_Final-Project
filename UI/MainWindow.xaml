@@ -11,105 +11,106 @@
 		Background="Transparent"
 		AllowsTransparency="True">
 
-    <Border Background="#272537"
+	<Border Background="#272537"
 			CornerRadius="20">
-        <Grid>
+		<Grid>
 
-            <!-- Definition -->
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="150"/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
+			<!-- Definition -->
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="150"/>
+				<ColumnDefinition/>
+			</Grid.ColumnDefinitions>
 
-            <Grid.RowDefinitions>
-                <RowDefinition Height="25"/>
-                <RowDefinition Height="75"/>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
-            <!-- Definition -->
+			<Grid.RowDefinitions>
+				<RowDefinition Height="25"/>
+				<RowDefinition Height="75"/>
+				<RowDefinition/>
+			</Grid.RowDefinitions>
+			<!-- Definition -->
 
-            <!-- Head -->
-            <Border Grid.ColumnSpan="2"
-                    x:Name="brd_Head"
+			<!-- Head -->
+			<Border Grid.ColumnSpan="2"
+					x:Name="brd_Head"
 					Background="#FF151838"
 					CornerRadius="20,20,0,0"
-                    MouseLeftButtonDown="brd_Head_MouseLeftButtonDown">
+					MouseLeftButtonDown="brd_Head_MouseLeftButtonDown">
 
-                <Grid HorizontalAlignment="Stretch">
-                    <Label Content="CATCHit"
-                           Foreground="Gray"
-                           FontWeight="SemiBold"
-                           Margin="10,0,0,0"/>
+				<Grid Grid.Row="0"
+					  HorizontalAlignment="Stretch">
+					<Label Content="CATCHit"
+						   Foreground="Gray"
+						   FontWeight="SemiBold"
+						   Margin="10,0,0,0"/>
 
-                    <StackPanel HorizontalAlignment="Right"
-                                Orientation="Horizontal">
+					<StackPanel HorizontalAlignment="Right"
+								Orientation="Horizontal">
 
-                        <Button x:Name="btn_Minimize"
-                                Height="20"
-                                Width="20"
-                                Content="🗕"
-                                BorderThickness="0"
-                                Foreground="Gray"
-                                FontWeight="Bold"
-                                Margin="0,0,10,0" Click="btn_Minimize_Click">
-                            <Button.Style>
-                                <Style TargetType="{x:Type Button}">
-                                    <Setter Property="Background" Value="Transparent"/>
-                                    <Setter Property="Template">
-                                        <Setter.Value>
-                                            <ControlTemplate TargetType="{x:Type Button}">
-                                                <Border Background="{TemplateBinding Background}">
-                                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                                                </Border>
-                                            </ControlTemplate>
-                                        </Setter.Value>
-                                    </Setter>
-                                    <Style.Triggers>
-                                        <Trigger Property="IsMouseOver" Value="True">
-                                            <Setter Property="Background" Value="#FF4949E6"/>
-                                        </Trigger>
-                                    </Style.Triggers>
-                                </Style>
-                            </Button.Style>
-                        </Button>
+						<Button x:Name="btn_Minimize"
+								Height="20"
+								Width="20"
+								Content="🗕"
+								BorderThickness="0"
+								Foreground="Gray"
+								FontWeight="Bold"
+								Margin="0,0,10,0" Click="btn_Minimize_Click">
+							<Button.Style>
+								<Style TargetType="{x:Type Button}">
+									<Setter Property="Background" Value="Transparent"/>
+									<Setter Property="Template">
+										<Setter.Value>
+											<ControlTemplate TargetType="{x:Type Button}">
+												<Border Background="{TemplateBinding Background}">
+													<ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+												</Border>
+											</ControlTemplate>
+										</Setter.Value>
+									</Setter>
+									<Style.Triggers>
+										<Trigger Property="IsMouseOver" Value="True">
+											<Setter Property="Background" Value="Transparent"/>
+										</Trigger>
+									</Style.Triggers>
+								</Style>
+							</Button.Style>
+						</Button>
 
-                        <Button x:Name="btn_Exit"
-                                Height="20"
-                                Width="20"
-                                Content="❌"
-                                BorderThickness="0"
-                                Foreground="Gray"
-                                FontWeight="Bold"
-                                Margin="0,0,10,0" Click="btn_Exit_Click">
-                            <Button.Style>
-                                <Style TargetType="{x:Type Button}">
-                                    <Setter Property="Background" Value="Transparent"/>
-                                    <Setter Property="Template">
-                                        <Setter.Value>
-                                            <ControlTemplate TargetType="{x:Type Button}">
-                                                <Border Background="{TemplateBinding Background}">
-                                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                                                </Border>
-                                            </ControlTemplate>
-                                        </Setter.Value>
-                                    </Setter>
-                                    <Style.Triggers>
-                                        <Trigger Property="IsMouseOver" Value="True">
-                                            <Setter Property="Background" Value="Red"/>
-                                        </Trigger>
-                                    </Style.Triggers>
-                                </Style>
-                            </Button.Style>
-                        </Button>
-                    </StackPanel>
-                </Grid>
-            </Border>
-            <!-- Head -->
+						<Button x:Name="btn_Exit"
+								Height="20"
+								Width="20"
+								Content="❌"
+								BorderThickness="0"
+								Foreground="Gray"
+								FontWeight="Bold"
+								Margin="0,0,10,0" Click="btn_Exit_Click">
+							<Button.Style>
+								<Style TargetType="{x:Type Button}">
+									<Setter Property="Background" Value="Transparent"/>
+									<Setter Property="Template">
+										<Setter.Value>
+											<ControlTemplate TargetType="{x:Type Button}">
+												<Border Background="{TemplateBinding Background}">
+													<ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+												</Border>
+											</ControlTemplate>
+										</Setter.Value>
+									</Setter>
+									<Style.Triggers>
+										<Trigger Property="IsMouseOver" Value="True">
+											<Setter Property="Background" Value="Transparent"/>
+										</Trigger>
+									</Style.Triggers>
+								</Style>
+							</Button.Style>
+						</Button>
+					</StackPanel>
+				</Grid>
+			</Border>
+			<!-- Head -->
 
-            <!-- Username -->
-            <StackPanel Grid.Row="1">
+			<!-- Username -->
+			<StackPanel Grid.Row="1">
 
-                <TextBlock x:Name="Username"
+				<TextBlock x:Name="Username"
 				   Text="Username"
 				   VerticalAlignment="Stretch"
 				   HorizontalAlignment="Stretch"
@@ -118,60 +119,60 @@
 				   FontSize="22"
 				   Margin="15,20,0,0"/>
 
-            </StackPanel>
-            <!-- Username -->
+			</StackPanel>
+			<!-- Username -->
 
-            <!-- Menu -->
-            <StackPanel Grid.Row="2">
-
-                <RadioButton Content="Home"
+			<!-- Menu -->
+			<StackPanel Grid.Row="2">
+				
+				<!-- Home Buttons -->
+				<RadioButton Content="Home"
+							 x:Name="Rbtn_Home"
 							 Height="50"
 							 Foreground="White"
 							 FontSize="14"
-							 Style="{StaticResource MenuBtnStyle}"/>
+							 Style="{StaticResource MenuBtnStyle}"
+							 Click="Rbtn_Home_Click"/>
+				
+				<StackPanel x:Name="stk_Home">
+						
+					<Button Content="Video"
+							x:Name="btn_Video"
+							Style="{StaticResource HomeBtnStyle}"/>
 
-                <RadioButton Content="Video"
+					<Button Content="Audio"
+							x:Name="btn_Audio"
+							Style="{StaticResource HomeBtnStyle}"/>
+
+					<Button Content="Image"
+							x:Name="btn_Image"
+							Style="{StaticResource HomeBtnStyle}"/>
+
+					<Button Content="All Files"
+							x:Name="btn_AllFiles"
+							Style="{StaticResource HomeBtnStyle}"/>
+				</StackPanel>
+				<!-- Home buttons -->
+
+				<RadioButton Content="History"
+                             x:Name="Rbtn_History"
 							 Height="50"
 							 Foreground="White"
 							 FontSize="14"
-							 Style="{StaticResource MenuBtnStyle}"/>
+							 Style="{StaticResource MenuBtnStyle}"
+                             Click="Rbtn_History_Click"/>
 
-                <RadioButton Content="Audio"
+				<RadioButton Content="More"
+                             x:Name="Rbtn_More"
 							 Height="50"
 							 Foreground="White"
 							 FontSize="14"
-							 Style="{StaticResource MenuBtnStyle}"/>
+							 Style="{StaticResource MenuBtnStyle}"
+                             Click="Rbtn_More_Click"/>
 
-                <RadioButton Content="Image"
-							 Height="50"
-							 Foreground="White"
-							 FontSize="14"
-							 Style="{StaticResource MenuBtnStyle}"/>
+			</StackPanel>
+			<!-- Menu -->
 
-                <RadioButton Content="History"
-							 Height="50"
-							 Foreground="White"
-							 FontSize="14"
-							 Style="{StaticResource MenuBtnStyle}"/>
-
-                <RadioButton Content="More"
-							 Height="50"
-							 Foreground="White"
-							 FontSize="14"
-							 Style="{StaticResource MenuBtnStyle}"/>
-
-                <!-- <Button x:Name="btn_Exit"
-						Content="Exit"
-						Background="Transparent"
-						Foreground="Red"
-						Margin="0,220,0,0"
-						Height="65"
-						FontSize="20"
-						BorderThickness="0"
-						Template="{StaticResource NoMouseOverButtonTemplate}" Click="btn_Exit_Click"/> -->
-            </StackPanel>
-            <!-- Menu -->
-
-        </Grid>
-    </Border>
+		</Grid>
+	</Border>
 </Window>
