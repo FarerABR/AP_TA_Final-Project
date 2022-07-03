@@ -1,9 +1,11 @@
 using System;
+using SQLite;
 
 namespace DAL.Entity.User
 {
 	public class User
 	{
+		[PrimaryKey, AutoIncrement]
 		private int Id { get; set; }
 
 		private string Full_Name { get; set; }
