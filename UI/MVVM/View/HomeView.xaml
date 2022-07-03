@@ -8,7 +8,7 @@
              d:DesignHeight="560" d:DesignWidth="770">
 
     <Border CornerRadius="0,0,10,0"
-            Background="#FF5E6280">
+            Background="#888C46">
 
         <Grid>
 
@@ -32,7 +32,8 @@
 
             <!--#region Send Box -->
             <Border Grid.Row="1"
-                    Background="#FF48508C">
+                    CornerRadius="0,0,10,0"
+                    Background="#F2EaEd">
 
                 <StackPanel VerticalAlignment="Stretch"
                         HorizontalAlignment="Stretch"

@@ -16,8 +16,8 @@
         <viewModel:MainViewModel/>
     </Window.DataContext>
 
-    <Border Background="#272537"
-			CornerRadius="20">
+    <Border Background="#2A3457"
+			CornerRadius="10">
         <Grid>
 
             <!-- Definition -->
@@ -36,14 +36,14 @@
             <!-- Head -->
             <Border Grid.ColumnSpan="2"
 					x:Name="brd_Head"
-					Background="#FF151838"
-					CornerRadius="20,20,0,0"
+					Background="#A4A4BF"
+					CornerRadius="10,10,0,0"
 					MouseLeftButtonDown="brd_Head_MouseLeftButtonDown">
 
                 <Grid Grid.Row="0"
 					  HorizontalAlignment="Stretch">
                     <Label Content="CATCHit"
-						   Foreground="Gray"
+						   Foreground="#FF484848"
 						   FontWeight="SemiBold"
 						   Margin="10,0,0,0"/>
 
@@ -55,7 +55,7 @@
 								Width="20"
 								Content="🗕"
 								BorderThickness="0"
-								Foreground="Gray"
+								Foreground="#FF484848"
 								FontWeight="Bold"
 								Margin="0,0,10,0" Click="btn_Minimize_Click">
                             <Button.Style>
@@ -84,7 +84,7 @@
 								Width="20"
 								Content="❌"
 								BorderThickness="0"
-								Foreground="Gray"
+								Foreground="#FF484848"
 								FontWeight="Bold"
 								Margin="0,0,10,0" Click="btn_Exit_Click">
                             <Button.Style>
@@ -111,10 +111,20 @@
                 </Grid>
             </Border>
             <!-- Head -->
+            
+            <!--#region Header IP -->
+            <Border Grid.Row="1"
+                    Grid.Column="1"
+                    Background="#2A3457"
+                    BorderBrush="#FF11215D"
+                    BorderThickness="0,0,0,2">
+                
+            </Border>
+            <!--#region -->
 
             <!-- Username -->
-            <StackPanel Grid.Row="1"
-                        Background="#FF171521">
+            <Border Grid.Row="1"
+                    Background="#16235A">
 
                 <TextBlock x:Name="Username"
 				   Text="Username"
@@ -124,15 +134,16 @@
 				   Foreground="White"
 				   FontSize="22"
 				   Margin="15,20,0,0"/>
-
-            </StackPanel>
+            </Border>
             <!-- Username -->
 
+            <!-- Menu -->
             <Border Grid.Row="2"
-                    Background="#FF171521"
-                    CornerRadius="0,0,0,20">
+                    Background="#2A3457"
+                    CornerRadius="0,0,0,10"
+                    BorderThickness="0,0,2,0"
+                    BorderBrush="#FF11215D">
 
-                <!-- Menu -->
                 <StackPanel >
                     <!-- Home Buttons -->
                     <RadioButton Content="Home"
@@ -185,7 +196,7 @@
 
             <Border Grid.Row="2"
                     Grid.Column="3"
-                    CornerRadius="20"
+                    CornerRadius="10"
                     Background="Transparent">
 
                 <ContentControl

@@ -6,7 +6,7 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Button}">
                     <Border CornerRadius="10"
-                            Background="#FF464454">
+                            Background="#FF4BA28C">
                         <TextBlock Text="Send"
                                    Background="Transparent"
                                    Foreground="LightCyan"
