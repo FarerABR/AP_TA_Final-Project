@@ -1,22 +1,14 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
-
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <TargetFramework>net6.0-windows</TargetFramework>
     <UseWPF>true</UseWPF>
   </PropertyGroup>
-
   <ItemGroup>
-    <Folder Include="Fonts\" />
+    <Folder Include="Fonts\"/>
   </ItemGroup>
-
   <ItemGroup>
-    <PackageReference Include="sqlite-net-pcl" Version="1.8.116" />
+    <ProjectReference Include="..\DAL\DAL.csproj"/>
+    <ProjectReference Include="..\BLL\BLL.csproj"/>
   </ItemGroup>
-  
-  <ItemGroup>
-    <ProjectReference Include="..\DAL\DAL.csproj" />
-    <ProjectReference Include="..\BLL\BLL.csproj" />
-  </ItemGroup>
-
 </Project>

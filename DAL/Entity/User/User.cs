@@ -1,22 +1,20 @@
 using System;
-using SQLite;
 
 namespace DAL.Entity.User
 {
 	public class User
 	{
-		[PrimaryKey, AutoIncrement]
-		private int Id { get; set; }
+		public int Id { get; set; }
 
-		private string Full_Name { get; set; }
+		public string Full_Name { get; set; }
 
-		private string Username { get; set; }
+		public string Username { get; set; }
 
-		private string Password { get; set; }
+		public string Password { get; set; }
 
 		public User(int _Id, string _Full_Name, string _Username, string _Password)
 		{
-			Id = -Id;
+			Id = _Id;
 			Full_Name = _Full_Name;
 			Username = _Username;
 			Password = _Password;

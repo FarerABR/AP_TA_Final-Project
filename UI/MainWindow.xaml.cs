@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using BLL;
 
 namespace UI
 {
@@ -34,6 +35,7 @@ namespace UI
 
 		private void btn_Exit_Click(object sender, RoutedEventArgs e)
 		{
+			UserRepository.SaveData();
 			this.Close();
 		}
 
@@ -79,13 +81,13 @@ namespace UI
 			stk_Home.Children.Add(allBtn);
 		}
 
-        private void Rbtn_History_Click(object sender, RoutedEventArgs e)
-        {
+		private void Rbtn_History_Click(object sender, RoutedEventArgs e)
+		{
 			stk_Home.Children.Clear();
-        }
+		}
 
-        private void Rbtn_More_Click(object sender, RoutedEventArgs e)
-        {
+		private void Rbtn_More_Click(object sender, RoutedEventArgs e)
+		{
 			stk_Home.Children.Clear();
 		}
 	}

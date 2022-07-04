@@ -14,10 +14,9 @@ namespace UI
 	/// </summary>
 	public partial class App : Application
 	{
-        private void Application_Startup(object sender, StartupEventArgs e)
-        {
-			UserRepository userRep = new UserRepository();
-			userRep.LoadDB();
+		private void Application_Startup(object sender, StartupEventArgs e)
+		{
+			UserRepository.LoadData();
 		}
-    }
+	}
 }

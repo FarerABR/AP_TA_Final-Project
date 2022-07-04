@@ -1,28 +1,66 @@
-using System;
 using DAL.Entity.User;
-using SQLite;
+using Newtonsoft.Json;
 
 namespace BLL
 {
-	public class UserRepository
+	public static class UserRepository
 	{
-		private SQLiteConnection Connection;
 
-		public void LoadDB()
+		/// <summary>
+		/// User list
+		/// </summary>
+		private static List<User> UserList;
+
+		/// <summary>
+		/// Loads the data to the app
+		/// </summary>
+		public static void LoadData()
 		{
-			if (!File.Exists(@".\UserDB.db3"))
+			if (!File.Exists(@".\data\userdata.json"))
 			{
-				Connection = new SQLiteConnection(@".\UserDB.db3");
-				Connection.CreateTable<User>();
+				Directory.CreateDirectory(@".\data\");
+				File.Create(@".\data\userdata.json");
+				return;
 			}
+
+			string path = @".\data\userdata.json";
+			string strData = File.ReadAllText(path);
+			UserList = JsonConvert.DeserializeObject<List<User>>(strData);
 		}
 
-		public bool CreateUser(User user)
+		/// <summary>
+		/// Saves all data to the json file
+		/// </summary>
+		public static void SaveData()
 		{
-			Connection.Insert(user);
-			return true;
+			string path = @".\data\userdata.json";
+			string strData = JsonConvert.SerializeObject(UserList);
+			File.WriteAllText(path, strData);
+
 		}
 
+		/// <summary>
+		/// creates a user if its not already created
+		/// </summary>
+		/// <param name="_user"></param>
+		public static void CreateUser(User _user)
+		{
+			if (UserList.Where(x => x.Username == _user.Username).Any())
+			{
+				throw new Exception($"User with username: {_user.Username} already exist");
+			}
+			UserList.Add(_user);
+		}
+
+		/// <summary>
+		/// returns a user by username
+		/// </summary>
+		/// <param name="_username"></param>
+		/// <returns>User or null</returns>
+		public static User ReadUser(string _username)
+		{
+			return UserList.Where(x => x.Username == _username).FirstOrDefault();
+		}
 
 	}
 }

@@ -1,17 +1,12 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
-
   <ItemGroup>
-    <PackageReference Include="sqlite-net-pcl" Version="1.8.116" />
+    <ProjectReference Include="..\DAL\DAL.csproj"/>
   </ItemGroup>
-
   <ItemGroup>
-    <ProjectReference Include="..\DAL\DAL.csproj" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1"/>
   </ItemGroup>
-
-
 </Project>
