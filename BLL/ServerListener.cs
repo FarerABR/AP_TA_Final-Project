@@ -12,12 +12,13 @@ namespace BLL
 
 		private bool IsRunnig = false;
 
-		public void StartServer(string _Ip, int _port)
+		public void StartServer(string _Ip, string _port)
 		{
 			ServerSck = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-			EndPoint = new IPEndPoint(IPAddress.Parse(_Ip), _port);
+			EndPoint = new IPEndPoint(IPAddress.Parse(_Ip), Convert.ToInt32(_port));
 			ServerSck.Bind(EndPoint);
 			ServerSck.Listen(10);
+			MainSck = ServerSck.Accept();
 			ServerSck.BeginAccept(AcceptCallBack, null);
 		}
 
@@ -45,6 +46,23 @@ namespace BLL
 			ServerSck.Close();
 			MainSck.Close();
 			IsRunnig = false;
+		}
+
+		public static List<String> IpList()
+		{
+			List<string> list = new List<string>();
+			list.Add("local host");
+			string myHost = System.Net.Dns.GetHostName();
+
+			System.Net.IPHostEntry myIPs = System.Net.Dns.GetHostEntry(myHost);
+
+			foreach (var item in myIPs.AddressList)
+			{
+				if (item.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork)
+					list.Add(item.ToString());
+			}
+
+			return list;
 		}
 
 	}

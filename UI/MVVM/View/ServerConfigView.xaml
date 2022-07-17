@@ -43,7 +43,8 @@
                     Margin="0,30,0,0"
                     Width="210"
                     Height="50"
-                    Style="{StaticResource LoginBtnStyle}"/>
+                    Style="{StaticResource LoginBtnStyle}"
+                    Click="btn_Server_Click"/>
 
             <TextBlock x:Name="txtb_Status"
                        Text=""

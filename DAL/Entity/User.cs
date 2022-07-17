@@ -1,6 +1,6 @@
 using System;
 
-namespace DAL.Entity.User
+namespace DAL.Entity
 {
 	public class User
 	{

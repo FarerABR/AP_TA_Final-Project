@@ -1,4 +1,4 @@
-using DAL.Entity.User;
+using DAL.Entity;
 using Newtonsoft.Json;
 
 namespace BLL

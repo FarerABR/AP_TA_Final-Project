@@ -6,7 +6,6 @@
              xmlns:local="clr-namespace:UI.MVVM.View"
              mc:Ignorable="d" 
              d:DesignHeight="350" d:DesignWidth="300">
-    
     <Border CornerRadius="0,0,10,10"
             Background="#FF11215D">
         <StackPanel>
@@ -21,22 +20,22 @@
             <Label Content="Ip"
                    Foreground="AntiqueWhite"
                    Margin="45,0,0,0"
-                   FontSize="10"/>
+                   FontSize="14"/>
 
             <TextBox x:Name="txt_Ip"
                      Width="210"
-                     Height="25"/>
+                     Height="30"/>
 
 
 
             <Label Content="Port"
                    Foreground="AntiqueWhite"
                    Margin="45,20,0,0"
-                   FontSize="10"/>
+                   FontSize="14"/>
 
             <TextBox x:Name="txt_Port"
                      Width="210"
-                     Height="25"/>
+                     Height="30"/>
 
             <Button x:Name="btn_Client"
                     Content="Connect"
@@ -49,7 +48,7 @@
                        Text=""
                        TextWrapping="Wrap"
                        HorizontalAlignment="Center"
-                       Margin="0,40,0,0"
+                       Margin="0,35,0,0"
                        FontSize="15"
                        Foreground="Coral"/>
 

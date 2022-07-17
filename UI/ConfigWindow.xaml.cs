@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 using System.Windows.Input;
-using DAL.Entity.User;
+using DAL.Entity;
 
 namespace UI
 {
@@ -9,8 +9,10 @@ namespace UI
     /// </summary>
     public partial class ConfigWindow : Window
     {
+        public static User _user;
         public ConfigWindow(User user)
         {
+            _user=user;
             InitializeComponent();
         }
 
