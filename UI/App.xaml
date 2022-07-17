@@ -5,14 +5,15 @@
              xmlns:viewModel="clr-namespace:UI.MVVM.ViewModel"
              xmlns:view="clr-namespace:UI.MVVM.View"
              StartupUri="StartupWindow.xaml"
-             Startup="Application_Startup">
+             Startup="Application_Startup"
+             Exit="Application_Exit">
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Styles/MenuBtnStyle.xaml"/>
+                <ResourceDictionary Source="Styles/ConfigRbtnStyle.xaml"/>
                 <ResourceDictionary Source="Styles/HomeBtnStyle.xaml"/>
                 <ResourceDictionary Source="Styles/TextBoxStyle.xaml"/>
-                <ResourceDictionary Source="Styles/StartupTextBoxStyle.xaml"/>
                 <ResourceDictionary Source="Styles/SendBtnStyle.xaml"/>
                 <ResourceDictionary Source="Styles/LoginBtnStyle.xaml"/>
                 <ResourceDictionary Source="Styles/SignUpBtnStyle.xaml"/>
@@ -21,7 +22,15 @@
             <DataTemplate DataType="{x:Type viewModel:HomeViewModel}">
                 <view:HomeView/>
             </DataTemplate>
-                       
+
+            <DataTemplate DataType="{x:Type viewModel:ServerConfigViewModel}">
+                <view:ServerConfigView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:ClientConfigViewModel}">
+                <view:ClientConfigView/>
+            </DataTemplate>
+
         </ResourceDictionary>
     </Application.Resources>
 </Application>

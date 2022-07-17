@@ -72,6 +72,9 @@ namespace UI
 			}
 
 			// TODO: this is where i send the user to config window
+			ConfigWindow configWindow = new ConfigWindow(user);
+			configWindow.Show();
+			this.Close();
 		}
 	}
 }

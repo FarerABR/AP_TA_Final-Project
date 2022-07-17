@@ -18,5 +18,10 @@ namespace UI
 		{
 			UserRepository.LoadData();
 		}
-	}
+
+        private void Application_Exit(object sender, ExitEventArgs e)
+        {
+			UserRepository.SaveData();
+        }
+    }
 }

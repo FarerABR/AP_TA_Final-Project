@@ -5,8 +5,8 @@ namespace UI.Core
 {
 	public class RelayComamnd : ICommand
 	{
-		private Action<object> execute;
-		private Func<object, bool> canExecute;
+		private Action<object> _execute;
+		private Func<object, bool> _canExecute;
 
 		public event EventHandler CanExecuteChanged
 		{
@@ -14,20 +14,20 @@ namespace UI.Core
 			remove { CommandManager.RequerySuggested -= value; }
 		}
 
-		public RelayComamnd(Action<object> _execute, Func<object, bool> _canExecute = null)
+		public RelayComamnd(Action<object> execute, Func<object, bool> canExecute = null)
 		{
-			execute = _execute;
-			canExecute = _canExecute;
+			_execute = execute;
+			_canExecute = canExecute;
 		}
 
 		public bool CanExecute(object parameter)
 		{
-			return canExecute == null || canExecute(parameter);
+			return _canExecute == null || _canExecute(parameter);
 		}
 
 		public void Execute(object parameter)
 		{
-			canExecute(parameter);
+			_execute(parameter);
 		}
 	}
 }
