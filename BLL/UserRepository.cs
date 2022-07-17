@@ -3,19 +3,21 @@ using Newtonsoft.Json;
 
 namespace BLL
 {
-	public static class UserRepository
+	public class UserRepository
 	{
 
 		/// <summary>
 		/// User list
 		/// </summary>
-		private static List<User> UserList;
+		private static List<User> UserList = new List<User>();
 
 		/// <summary>
 		/// Loads the data to the app
 		/// </summary>
 		public static void LoadData()
 		{
+			UserList.Add(new User(0, "Admin", "root"));
+
 			if (!File.Exists(@".\data\userdata.json"))
 			{
 				Directory.CreateDirectory(@".\data\");
@@ -25,6 +27,8 @@ namespace BLL
 
 			string path = @".\data\userdata.json";
 			string strData = File.ReadAllText(path);
+			if (strData == "")
+				return;
 			UserList = JsonConvert.DeserializeObject<List<User>>(strData);
 		}
 
@@ -59,6 +63,7 @@ namespace BLL
 		/// <returns>User or null</returns>
 		public static User ReadUser(string _username)
 		{
+			_username = _username.Trim();
 			return UserList.Where(x => x.Username == _username).FirstOrDefault();
 		}
 
