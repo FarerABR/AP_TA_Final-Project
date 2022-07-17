@@ -19,7 +19,8 @@
                                      x:Name="SearchBox"/>
 
                             <TextBlock IsHitTestVisible="False"
-                                       Text="Type a message"
+                                       x:Name="txtbl_TextBlock"
+                                       Text="Type a message..."
                                        VerticalAlignment="Center"
                                        HorizontalAlignment="Left"
                                        Margin="10,0,0,0"

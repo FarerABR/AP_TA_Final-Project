@@ -1,0 +1,27 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Style TargetType="{x:Type Button}"
+           x:Key="SignUpBtnStyle">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border CornerRadius="10"
+                            Background="BlueViolet">
+                        <TextBlock Text="{TemplateBinding Property=Content}"
+                                   Background="Transparent"
+                                   Foreground="LightCyan"
+                                   VerticalAlignment="Center"
+                                   HorizontalAlignment="Center"
+                                   FontSize="20"
+                                   FontWeight="SemiBold"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="#FF464454"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+</ResourceDictionary>

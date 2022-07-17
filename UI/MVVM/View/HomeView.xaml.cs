@@ -23,6 +23,7 @@ namespace UI.MVVM.View
         public HomeView()
         {
             InitializeComponent();
+            txb_Send.Text = "";
         }
     }
 }
