@@ -6,9 +6,9 @@ namespace BLL
 {
 	public class ServerListener
 	{
-		private Socket ServerSck;
-		private Socket MainSck;
-		private IPEndPoint EndPoint;
+		public Socket ServerSck;
+		public Socket MainSck;
+		public IPEndPoint EndPoint;
 
 		private bool IsRunnig = false;
 

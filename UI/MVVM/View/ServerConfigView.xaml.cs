@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Windows.Controls;
 using BLL;
+using UI.MVVM.View;
 
 namespace UI.MVVM.View
 {
@@ -44,8 +45,11 @@ namespace UI.MVVM.View
 				ConnectionStatus(false);
 				server.StartServer(ip, port);
 
-				MainWindow mainWindow = new MainWindow(ConfigWindow._user, server);
+				MainWindow mainWindow = new MainWindow(ConfigWindow._user, server, null);
 				mainWindow.Show();
+
+				ConfigWindow.closeWindow();
+
 			}
 			catch (Exception ex)
 			{
@@ -61,5 +65,5 @@ namespace UI.MVVM.View
 			txt_Port.IsEnabled = value;
 			btn_Server.IsEnabled = value;
 		}
-	}
+    }
 }

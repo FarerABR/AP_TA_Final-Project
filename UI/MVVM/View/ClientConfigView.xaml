@@ -5,44 +5,49 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:UI.MVVM.View"
              mc:Ignorable="d" 
-             d:DesignHeight="350" d:DesignWidth="300">
-    <Border CornerRadius="0,0,10,10"
-            Background="#FF11215D">
+             d:DesignHeight="400" d:DesignWidth="300">
+
+    <Border
+        CornerRadius="0,0,10,10"
+            Background="#F2EaEd">
         <StackPanel>
 
             <Label Content="Client"
                HorizontalAlignment="Center"
                FontSize="30"
                FontWeight="Bold"
-               Foreground="AliceBlue"
+               Foreground="Black"
                Margin="0,10,0,0"/>
 
             <Label Content="Ip"
-                   Foreground="AntiqueWhite"
+                   Foreground="Black"
                    Margin="45,0,0,0"
                    FontSize="14"/>
 
             <TextBox x:Name="txt_Ip"
+                     Text="local host"
                      Width="210"
                      Height="30"/>
 
 
 
             <Label Content="Port"
-                   Foreground="AntiqueWhite"
+                   Foreground="Black"
                    Margin="45,20,0,0"
                    FontSize="14"/>
 
             <TextBox x:Name="txt_Port"
                      Width="210"
+                     Text="8080"
                      Height="30"/>
 
             <Button x:Name="btn_Client"
                     Content="Connect"
                     Margin="0,30,0,0"
                     Width="210"
-                    Height="40"
-                    Style="{StaticResource SignUpBtnStyle}"/>
+                    Height="50"
+                    Style="{StaticResource SignUpBtnStyle}"
+                    Click="btn_Client_Click"/>
 
             <TextBlock x:Name="txtb_Status"
                        Text=""

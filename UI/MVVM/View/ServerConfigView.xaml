@@ -36,6 +36,7 @@
 
             <TextBox x:Name="txt_Port"
                      Width="210"
+                     Text="8080"
                      Height="30"/>
 
             <Button x:Name="btn_Server"

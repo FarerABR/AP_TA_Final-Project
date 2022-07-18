@@ -11,7 +11,7 @@
         ResizeMode="NoResize"
         Background="Transparent"
         Height="425" Width="300">
-    
+
     <Window.DataContext>
         <viewModel:ConfigViewModel/>
     </Window.DataContext>
@@ -115,7 +115,7 @@
                                  Width="150"
 							     Style="{StaticResource ConfigRbtnStyle }"
                                  Command="{Binding ServerViewCommand}"/>
-                    
+
                     <RadioButton x:Name="rbtn_Client"
                                  Content="Client"
                                  Width="150"
