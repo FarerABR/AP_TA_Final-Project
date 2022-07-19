@@ -35,7 +35,7 @@ namespace BLL.Transmission
                     }
                 case PacketType.FileInfo:
                     {
-                        BLL.Transmission.Packet.FileInfo fileInfo = deserializer.DeSerialize<Transmission.Packet.FileInfo>();
+                        BLL.Transmission.Packet.FileInfo fileInfo = deserializer.DeSerialize<BLL.Transmission.Packet.FileInfo>();
                         DownloadQueue download = _fileDowloadHandler(fileInfo, head.Id);
                         Head header = new Head()
                         {
@@ -63,7 +63,7 @@ namespace BLL.Transmission
                         break;
                     }
                 default:
-                    throw new Exception("Something went wrong!");
+                    throw new Exception("اطلاعات دریافت شده دارای مشکل است.");
             }
         }
     }

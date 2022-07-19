@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Windows.Controls;
 using BLL;
+using System.Threading;
 using UI.MVVM.View;
 
 namespace UI.MVVM.View
@@ -26,12 +27,14 @@ namespace UI.MVVM.View
 				ip = "127.0.0.1";
 			}
 
-			TransferClient client = new TransferClient();
+			Client client = new Client(Disconnected_Handler);
 			try
 			{
 				txtb_Status.Text = "Connecting to server...";
 				ConnectionStatus(false);
-				client.StartConnect(ip, port);
+				client.Connect(ip, Convert.ToInt32(port), Connected_Handler);
+
+				Thread.Sleep(5000);
 
 				MainWindow mainWindow = new MainWindow(ConfigWindow._user, null, client);
 				mainWindow.Show();
@@ -45,11 +48,20 @@ namespace UI.MVVM.View
 			}
 		}
 
+		public void Disconnected_Handler(object sender)
+		{
+
+		}
+		public void Connected_Handler(object sender, string error)
+		{
+
+		}
+
 		private void ConnectionStatus(bool value)
 		{
 			txt_Ip.IsEnabled = value;
 			txt_Port.IsEnabled = value;
 			btn_Client.IsEnabled = value;
 		}
-    }
+	}
 }

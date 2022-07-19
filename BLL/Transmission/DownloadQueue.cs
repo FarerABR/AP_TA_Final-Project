@@ -8,11 +8,11 @@ using BLL.Transmission.Packet;
 
 namespace BLL.Transmission
 {
-    public class DownloadQueue : BaseQueue
+   public class DownloadQueue : BaseQueue
     {
 
         public DownloadQueue(int id,
-            BLL.Transmission.Packet.FileInfo fileInfo,
+            Transmission.Packet.FileInfo fileInfo,
             ProgressChange progressChange)
         {
             _progressChanged += progressChange;

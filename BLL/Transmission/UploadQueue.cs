@@ -20,7 +20,7 @@ namespace BLL.Transmission
         {
             _filePath = filepath;
             var info = new System.IO.FileInfo(filepath);
-            _fileInfo = new BLL.Transmission.Packet.FileInfo()
+            _fileInfo = new Transmission.Packet.FileInfo()
             {
                 Extention = info.Extension,
                 Name = Path.GetFileNameWithoutExtension(info.Name),

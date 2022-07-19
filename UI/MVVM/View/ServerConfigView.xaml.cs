@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Windows.Controls;
 using BLL;
+using System.Threading;
 using UI.MVVM.View;
 
 namespace UI.MVVM.View
@@ -19,7 +20,7 @@ namespace UI.MVVM.View
 
 		private void ComboIp()
 		{
-			List<String> list = ServerListener.IpList();
+			List<String> list = Server.GetIpList();
 
 			foreach (String ip in list)
 			{
@@ -38,12 +39,14 @@ namespace UI.MVVM.View
 				ip = "127.0.0.1";
 			}
 
-			ServerListener server = new ServerListener();
+			Server server = new Server(SocketAccepted_Handler);
 			try
 			{
 				txtb_Status.Text = "Waiting for client...";
 				ConnectionStatus(false);
-				server.StartServer(ip, port);
+				server.Start(ip, Convert.ToInt32(port));
+				
+				Thread.Sleep(5000);
 
 				MainWindow mainWindow = new MainWindow(ConfigWindow._user, server, null);
 				mainWindow.Show();
@@ -59,11 +62,16 @@ namespace UI.MVVM.View
 
 		}
 
+		public void SocketAccepted_Handler(object sender, AcceptedSocket e)
+		{
+
+		}
+
 		private void ConnectionStatus(bool value)
 		{
 			cbox_IpBox.IsEnabled = value;
 			txt_Port.IsEnabled = value;
 			btn_Server.IsEnabled = value;
 		}
-    }
+	}
 }
