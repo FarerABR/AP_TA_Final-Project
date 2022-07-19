@@ -3,10 +3,10 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>net6.0-windows</TargetFramework>
     <UseWPF>true</UseWPF>
-    <ApplicationIcon>Pic\3.ico</ApplicationIcon>
+    <ApplicationIcon>Pic\icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Content Include="Pic\3.ico" />
+    <Content Include="Pic\icon.ico" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Fonts\" />

@@ -15,14 +15,16 @@ using System.Windows.Shapes;
 
 namespace UI.MVVM.View
 {
-    /// <summary>
-    /// Interaction logic for ServerTextMessage.xaml
-    /// </summary>
-    public partial class ServerTextMessage : UserControl
-    {
-        public ServerTextMessage()
-        {
-            InitializeComponent();
-        }
-    }
+	/// <summary>
+	/// Interaction logic for ServerTextMessage.xaml
+	/// </summary>
+	public partial class TextMessage : UserControl
+	{
+		public TextMessage(string text, string time)
+		{
+			InitializeComponent();
+			txtb_Text.Text = text;
+			txtb_Time.Text = time;
+		}
+	}
 }

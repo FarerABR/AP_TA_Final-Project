@@ -6,21 +6,21 @@ namespace BLL
 {
 	public class TransferClient
 	{
-		public Socket _client;
+		public Socket clientSck;
 		public IPEndPoint _iPEndPoint;
 		public bool _isRunning = false;
 
 		public void StartConnect(string ip, string port)
 		{
-			_client = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-			_client.Connect(ip, Convert.ToInt32(port));
-			// _client.BeginConnect(ip, Convert.ToInt32(port), ConnectCallBack, null);
+			clientSck = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+			clientSck.Connect(ip, Convert.ToInt32(port));
+			// clientSck.BeginConnect(ip, Convert.ToInt32(port), ConnectCallBack, null);
 		}
 
 		public void ConnectCallBack(IAsyncResult ar)
 		{
-			_client.EndConnect(ar);
-			_iPEndPoint = (IPEndPoint)_client.RemoteEndPoint;
+			clientSck.EndConnect(ar);
+			_iPEndPoint = (IPEndPoint)clientSck.RemoteEndPoint;
 			_isRunning = true;
 		}
 
@@ -28,7 +28,7 @@ namespace BLL
 		{
 			if (!_isRunning)
 				return;
-			_client.Close();
+			clientSck.Close();
 			_isRunning = false;
 		}
 	}

@@ -19,7 +19,7 @@ namespace BLL
 			ServerSck.Bind(EndPoint);
 			ServerSck.Listen(10);
 			MainSck = ServerSck.Accept();
-			ServerSck.BeginAccept(AcceptCallBack, null);
+			// ServerSck.BeginAccept(AcceptCallBack, null);
 		}
 
 		public void ReStartServer()
