@@ -34,12 +34,14 @@ namespace UI.MVVM.View
 				ConnectionStatus(false);
 				client.Connect(ip, Convert.ToInt32(port), Connected_Handler);
 
-				Thread.Sleep(5000);
+				Dispatcher.Invoke(() =>
+				{
+					MainWindow mainWindow = new MainWindow(ConfigWindow._user, null, client);
+					mainWindow.Show();
 
-				MainWindow mainWindow = new MainWindow(ConfigWindow._user, null, client);
-				mainWindow.Show();
-
-				ConfigWindow.closeWindow();
+					ConfigWindow.closeWindow();
+				});
+				
 			}
 			catch (Exception ex)
 			{

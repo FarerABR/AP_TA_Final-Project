@@ -27,7 +27,10 @@
             <TextBox x:Name="txt_Ip"
                      Text="local host"
                      Width="210"
-                     Height="30"/>
+                     Height="30"
+                     Foreground="AliceBlue"
+                     Background="#2A3457"
+                     FontSize="20"/>
 
 
 
@@ -39,7 +42,10 @@
             <TextBox x:Name="txt_Port"
                      Width="210"
                      Text="8080"
-                     Height="30"/>
+                     Height="30"
+                     Foreground="AliceBlue"
+                     Background="#2A3457"
+                     FontSize="20"/>
 
             <Button x:Name="btn_Client"
                     Content="Connect"

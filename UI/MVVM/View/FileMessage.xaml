@@ -11,20 +11,34 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
-
+            <StackPanel>
+                
             <Button Grid.Column="0"
                     x:Name="btn_Attach"
                     Background="Transparent"
+                    Click="btn_Attach_Click"
                     Width="40"
                     Height="40"
                     BorderThickness="0">
-                
-                <Image Source="../../Pic/file.ico"/>
+                   
+                    <Image x:Name="btn_AttachImage" Source="../../Pic/attach-file.ico"/>
             </Button>
+                <TextBlock x:Name="txtb_Progress"
+                           Text="20%"
+                           HorizontalAlignment="Center"
+                           />
+            </StackPanel>
 
             <StackPanel Grid.Column="1" Margin="10 5 5 5" >
-                <TextBlock x:Name="txtb_Name" TextTrimming="CharacterEllipsis"  Text="file name" />
-                <TextBlock x:Name="txtb_Time"  Margin="0 5 0 0" Text="13:08" />
+                <TextBlock x:Name="txtb_Name" 
+                           TextTrimming="CharacterEllipsis" 
+                           Text="file name" />
+                <TextBlock x:Name="txtb_Time"  
+                           Margin="0 5 0 0" 
+                           Text="13:08" />
+                <ProgressBar x:Name="prb_Progress" 
+                             Margin="0,2,0,0"
+                             Height="10"/>
             </StackPanel>
         </Grid>
     </Border>

@@ -12,6 +12,7 @@ namespace UI.MVVM.View
 	/// </summary>
 	public partial class ServerConfigView : UserControl
 	{
+		private Server _server;
 		public ServerConfigView()
 		{
 			InitializeComponent();
@@ -39,19 +40,14 @@ namespace UI.MVVM.View
 				ip = "127.0.0.1";
 			}
 
-			Server server = new Server(SocketAccepted_Handler);
+			_server = new Server(SocketAccepted_Handler);
 			try
 			{
 				txtb_Status.Text = "Waiting for client...";
 				ConnectionStatus(false);
-				server.Start(ip, Convert.ToInt32(port));
-				
-				Thread.Sleep(5000);
+				_server.Start(ip, Convert.ToInt32(port));
 
-				MainWindow mainWindow = new MainWindow(ConfigWindow._user, server, null);
-				mainWindow.Show();
 
-				ConfigWindow.closeWindow();
 
 			}
 			catch (Exception ex)
@@ -64,6 +60,13 @@ namespace UI.MVVM.View
 
 		public void SocketAccepted_Handler(object sender, AcceptedSocket e)
 		{
+				Dispatcher.Invoke(() =>
+				{
+				MainWindow mainWindow = new MainWindow(ConfigWindow._user, _server, null);
+				mainWindow.Show();
+
+				ConfigWindow.closeWindow();
+				});
 
 		}
 

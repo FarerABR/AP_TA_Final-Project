@@ -6,6 +6,10 @@
     <ApplicationIcon>Pic\icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <None Remove="Pic\attach-file.ico" />
+    <None Remove="Pic\High_quality.jpg" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="Pic\icon.ico" />
   </ItemGroup>
   <ItemGroup>
@@ -14,5 +18,9 @@
   <ItemGroup>
     <ProjectReference Include="..\DAL\DAL.csproj" />
     <ProjectReference Include="..\BLL\BLL.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pic\attach-file.ico" />
+    <Resource Include="Pic\High_quality.jpg" />
   </ItemGroup>
 </Project>

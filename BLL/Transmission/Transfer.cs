@@ -3,13 +3,14 @@ using System.IO;
 using System.Net.Sockets;
 using System.Text;
 using System.Windows;
+using DAL.Interface;
 
 namespace BLL.Transmission
 {
-	public delegate void ConnectionFailed(Exception error);
+    public delegate void ConnectionFailed(Exception error);
     public class Transfer
     {
-        private const int _bufferSize = PacketConfig.PacketSize;
+        private const int _bufferSize = DAL.Entity.PacketConfig.PacketSize;
         private byte[] _buffer;
         private ISocket _socket;
         private ProcessPacket _processPacket;
@@ -25,9 +26,9 @@ namespace BLL.Transmission
             _processPacket = new ProcessPacket(message_Handler, file_Handler);
             _buffer = new byte[_bufferSize];
             _connectionFailed = connectionFailed;
-            if(!Directory.Exists(PacketConfig.DowloadPath))
+            if (!Directory.Exists(DAL.Entity.PacketConfig.DowloadPath))
             {
-                Directory.CreateDirectory(PacketConfig.DowloadPath);
+                Directory.CreateDirectory(DAL.Entity.PacketConfig.DowloadPath);
             }
 
         }
@@ -40,13 +41,14 @@ namespace BLL.Transmission
                 _socket.TransferSocket.Send(BitConverter.GetBytes(buffer.Length), 0, 4, SocketFlags.None);
                 _socket.TransferSocket.Send(buffer, 0, buffer.Length, SocketFlags.None);
             }
-            catch
+            catch (Exception ex)
             {
                 _socket.Close();
+                _connectionFailed(ex);
             }
         }
 
-          
+
         public void RunReceive()
         {
             _socket.TransferSocket.BeginReceive(_buffer, 0, _bufferSize, SocketFlags.Peek, receiveCallback, null);
@@ -59,7 +61,7 @@ namespace BLL.Transmission
                 int ReceiveSize = _socket.TransferSocket.EndReceive(ar);
                 if (ReceiveSize >= 4)
                 {
-                    _socket.TransferSocket.Receive(_buffer,0,4, SocketFlags.None);
+                    _socket.TransferSocket.Receive(_buffer, 0, 4, SocketFlags.None);
                     int size = BitConverter.ToInt32(_buffer, 0);
 
                     int read = _socket.TransferSocket.Receive(_buffer, 0, size, SocketFlags.None);

@@ -5,8 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using BLL.Transmission.Packet;
-using BLL.Transmission.Packet.PacketSerialize;
+using BLL.Transmission.PacketSerialize;
+using DAL.Entity;
+using DAL.Enum;
 
 namespace BLL.Transmission
 {
@@ -20,7 +21,7 @@ namespace BLL.Transmission
         {
             _filePath = filepath;
             var info = new System.IO.FileInfo(filepath);
-            _fileInfo = new Transmission.Packet.FileInfo()
+            _fileInfo = new DAL.Entity.FileInfo()
             {
                 Extention = info.Extension,
                 Name = Path.GetFileNameWithoutExtension(info.Name),

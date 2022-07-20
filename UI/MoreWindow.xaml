@@ -1,0 +1,169 @@
+﻿<Window x:Class="UI.MoreWindow"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		xmlns:local="clr-namespace:UI"
+		mc:Ignorable="d"
+		Height="450" Width="600"
+		WindowStyle="None"
+		ResizeMode="NoResize"
+		AllowsTransparency="True"
+		Background="Transparent">
+    <Border CornerRadius="10"
+			Background="#2A3457">
+        <Grid>
+            <!--#region Grid Definition -->
+            <Grid.RowDefinitions>
+                <RowDefinition Height="25"/>
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <!--#endregion-->
+
+            <!--#region Header -->
+            <Border Grid.Row="0"
+					x:Name="brd_Head"
+					Background="#A4A4BF"
+					CornerRadius="10,10,0,0"
+					MouseLeftButtonDown="brd_Head_MouseLeftButtonDown">
+
+                <Grid>
+                    <Label Content="CATCHit"
+						   Foreground="#FF484848"
+						   FontWeight="SemiBold"
+						   Margin="5,0,0,0"/>
+
+                    <StackPanel HorizontalAlignment="Right"
+								Orientation="Horizontal">
+
+                        <Button x:Name="btn_Minimize"
+								Height="20"
+								Width="20"
+								Content="🗕"
+								BorderThickness="0"
+								Foreground="#FF484848"
+								FontWeight="Bold"
+								Margin="0,0,10,0" Click="btn_Minimize_Click">
+                            <Button.Style>
+                                <Style TargetType="{x:Type Button}">
+                                    <Setter Property="Background" Value="Transparent"/>
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="{x:Type Button}">
+                                                <Border Background="{TemplateBinding Background}">
+                                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                                </Border>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Background" Value="Transparent"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
+                        </Button>
+
+                        <Button x:Name="btn_Exit"
+								Height="20"
+								Width="20"
+								Content="❌"
+								BorderThickness="0"
+								Foreground="#FF484848"
+								FontWeight="Bold"
+								Margin="0,0,10,0" Click="btn_Exit_Click">
+                            <Button.Style>
+                                <Style TargetType="{x:Type Button}">
+                                    <Setter Property="Background" Value="Transparent"/>
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="{x:Type Button}">
+                                                <Border Background="{TemplateBinding Background}">
+                                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                                </Border>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Background" Value="Transparent"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
+                        </Button>
+                    </StackPanel>
+                </Grid>
+            </Border>
+            <!--#endregion-->
+
+            <Border Grid.Row="1"
+                Margin="20"
+                CornerRadius="20"
+                Background="#F2EaEd"
+                    Padding="20">
+
+                <StackPanel>
+                    <Ellipse Width="150"
+                             Height="150">
+                        <Ellipse.Fill>
+                            <ImageBrush ImageSource=".\Pic\High_quality.jpg"/>
+                        </Ellipse.Fill>
+                    </Ellipse>
+
+                    <TextBlock
+					   HorizontalAlignment="Center"
+					   FontSize="20"
+                       Foreground="Black"
+					   Text="Hi"
+                        Margin="0,10,0,0"/>
+
+                    <TextBlock
+					   HorizontalAlignment="Center"
+					   FontSize="20"
+                       Foreground="Black"
+					   Text="My name is Ali Baghaee Ravari"/>
+                    
+                    <TextBlock
+					   HorizontalAlignment="Center"
+					   FontSize="20"
+                       Foreground="Black"
+                        TextAlignment="Justify"
+                       TextWrapping="WrapWithOverflow"
+					   Text="and this is my Advanced-Programing project"/>
+
+                    <TextBlock
+					   HorizontalAlignment="Center"
+					   FontSize="20"
+                       Foreground="Black"
+                        TextAlignment="Justify"
+                       TextWrapping="WrapWithOverflow"
+					   Text="you can contact me with @FarerABR in everywhere :)"
+                        />
+
+                    <TextBlock
+					   HorizontalAlignment="Center"
+					   FontSize="20"
+                       Foreground="Black"
+                       TextWrapping="WrapWithOverflow"
+					   Text="Project repository:"/>
+
+                    <TextBlock
+					   HorizontalAlignment="Center"
+					   FontSize="20"
+                       TextWrapping="WrapWithOverflow"
+                       Foreground="#FF5555D2"
+					   Text="">
+                        <Hyperlink x:Name="hl_Ripository"
+                                   NavigateUri="https://github.com/FarerABR/AP_TA_Final-Project"
+                                   RequestNavigate="hl_Ripository_RequestNavigate">
+                            github.com/FarerABR/AP_TA_Final-Project
+                        </Hyperlink>
+                    </TextBlock>
+                    
+                </StackPanel>
+            </Border>
+        </Grid>
+    </Border>
+</Window>

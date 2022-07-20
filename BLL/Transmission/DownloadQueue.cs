@@ -4,7 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using BLL.Transmission.Packet;
+using DAL.Entity;
 
 namespace BLL.Transmission
 {
@@ -12,7 +12,7 @@ namespace BLL.Transmission
     {
 
         public DownloadQueue(int id,
-            Transmission.Packet.FileInfo fileInfo,
+           DAL.Entity.FileInfo fileInfo,
             ProgressChange progressChange)
         {
             _progressChanged += progressChange;

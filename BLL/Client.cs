@@ -2,6 +2,7 @@ using System;
 using System.Net;
 using System.Net.Sockets;
 using BLL.Transmission;
+using DAL.Interface;
 
 namespace BLL
 {
@@ -35,8 +36,9 @@ namespace BLL
 
             _connectedHandler = connectedHandler;
             _isRunning = true;
-            // _clientSocket.Connect(serverIp,serverPort);
-             _clientSocket.BeginConnect(serverIp,serverPort, connectedcallback ,null);
+            _clientSocket.Connect(serverIp,serverPort);
+            _endpoint=(EndPoint)_clientSocket.RemoteEndPoint;
+            //  _clientSocket.BeginConnect(serverIp,serverPort, connectedcallback ,null);
         }
 
         private void connectedcallback(IAsyncResult ar)

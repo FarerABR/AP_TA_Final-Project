@@ -24,7 +24,9 @@
 
             <ComboBox x:Name="cbox_IpBox"
                       Width="210"
-                      Height="30"/>
+                      Height="30"
+                      Background="#F2EaEd"
+                      FontSize="20"/>
 
 
 
@@ -37,7 +39,9 @@
             <TextBox x:Name="txt_Port"
                      Width="210"
                      Text="8080"
-                     Height="30"/>
+                     Height="30"
+                     Background="#F2EaEd"
+                     FontSize="20"/>
 
             <Button x:Name="btn_Server"
                     Content="Start the server"

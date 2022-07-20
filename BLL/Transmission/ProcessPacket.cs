@@ -1,10 +1,11 @@
-﻿using BLL.Transmission.Packet;
-using BLL.Transmission.Packet.PacketSerialize;
+﻿using BLL.Transmission.PacketSerialize;
+using DAL.Entity;
+using DAL.Enum;
 
 namespace BLL.Transmission
 {
     public delegate void MessageHandler(Message message);
-    public delegate DownloadQueue FileDowloadHandler(BLL.Transmission.Packet.FileInfo fileInfo,int id);
+    public delegate DownloadQueue FileDowloadHandler(DAL.Entity.FileInfo fileInfo,int id);
 
     public class ProcessPacket
     {
@@ -35,7 +36,7 @@ namespace BLL.Transmission
                     }
                 case PacketType.FileInfo:
                     {
-                        BLL.Transmission.Packet.FileInfo fileInfo = deserializer.DeSerialize<BLL.Transmission.Packet.FileInfo>();
+                        DAL.Entity.FileInfo fileInfo = deserializer.DeSerialize<DAL.Entity.FileInfo>();
                         DownloadQueue download = _fileDowloadHandler(fileInfo, head.Id);
                         Head header = new Head()
                         {
@@ -63,7 +64,7 @@ namespace BLL.Transmission
                         break;
                     }
                 default:
-                    throw new Exception("اطلاعات دریافت شده دارای مشکل است.");
+                    throw new Exception("Something went wrong!");
             }
         }
     }

@@ -153,18 +153,22 @@
 
 						<Button Content="Video"
 							x:Name="btn_Video"
+                                Click="btn_Video_Click"
 							Style="{StaticResource HomeBtnStyle}"/>
 
 						<Button Content="Audio"
 							x:Name="btn_Audio"
+                                Click="btn_Audio_Click"
 							Style="{StaticResource HomeBtnStyle}"/>
 
 						<Button Content="Image"
 							x:Name="btn_Image"
+                                Click="btn_Image_Click"
 							Style="{StaticResource HomeBtnStyle}"/>
 
 						<Button Content="All Files"
 							x:Name="btn_AllFiles"
+                                Click="btn_AllFiles_Click"
 							Style="{StaticResource HomeBtnStyle}"/>
 					</StackPanel>
 					<!-- Home buttons -->
@@ -224,13 +228,14 @@
 						Orientation="Horizontal"
 						Margin="5,5,5,5">
 
-							<TextBox x:Name="txt_Send"
-								Width="670"
-								Height="40"
-                                >
-							</TextBox>
+                            <TextBox x:Name="txt_Send"
+									 Width="670"
+									 Height="40"
+									 Background="#FFA9A1A4"
+									 Text=""
+                                     FontSize="25"/>
 
-							<Button x:Name="btn_Send"
+                            <Button x:Name="btn_Send"
 						Width="85"
 						Margin="5,0,0,0"
 						Content="Send"

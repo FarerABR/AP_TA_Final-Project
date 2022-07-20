@@ -4,17 +4,40 @@ namespace DAL.Entity
 {
 	public class User
 	{
-		public int Id { get; set; }
+		private int _id;
+		public int Id
+		{
+			get { return _id; }
+			set { _id = value; }
+		}
 
-		public string Username { get; set; }
+		private string _username;
+		public string Username
+		{
+			get { return _username; }
+			set { _username = value; }
+		}
 
-		public string Password { get; set; }
+		private string _password;
+		public string Password
+		{
+			get { return _password; }
+			set { _password = value; }
+		}
+
+		private List<Packets> _packets;
+		public List<Packets> Packets
+		{
+			get { return _packets; }
+			set { _packets = value; }
+		}
 
 		public User(int _Id, string _Username, string _Password)
 		{
 			Id = _Id;
 			Username = _Username;
 			Password = _Password;
+			Packets = new List<Packets>();
 		}
 	}
 }

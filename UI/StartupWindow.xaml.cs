@@ -40,6 +40,7 @@ namespace UI
 			try
 			{
 				UserRepository.CreateUser(user);
+				lbl_Error.Content = "You have Signd Up!";
 			}
 			catch (Exception ex)
 			{
