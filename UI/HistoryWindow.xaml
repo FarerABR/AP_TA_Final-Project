@@ -132,7 +132,7 @@
 							<GridView>
                                 <GridViewColumn Header="Type"
 												DisplayMemberBinding="{Binding PacketType}"
-												Width="80"/>
+												Width="90"/>
 								<GridViewColumn Header="Id"
 												DisplayMemberBinding="{Binding Id}"
 												Width="100"/>
@@ -141,10 +141,10 @@
 												Width="190"/>
 								<GridViewColumn Header="Extention"
 												DisplayMemberBinding="{Binding Extention}"
-												Width="95"/>
+												Width="100"/>
 								<GridViewColumn Header="Size"
 												DisplayMemberBinding="{Binding Size}"
-												Width="85"/>
+												Width="90"/>
 								<GridViewColumn Header="Send Time"
 												DisplayMemberBinding="{Binding SendTime}"
 												Width="190"/>
