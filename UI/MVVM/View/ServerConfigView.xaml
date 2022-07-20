@@ -7,7 +7,9 @@
              mc:Ignorable="d" 
              d:DesignHeight="350" d:DesignWidth="300">
     <Border CornerRadius="0,0,10,10"
-            Background="#FF11215D">
+            Background="#FF11215D"
+            BorderBrush="#F2EaEd"
+            BorderThickness="2,0,2,2">
         <StackPanel>
 
             <Label Content="Server"

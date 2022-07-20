@@ -9,7 +9,9 @@
 
     <Border
         CornerRadius="0,0,10,10"
-            Background="#F2EaEd">
+            Background="#F2EaEd"
+        BorderBrush="#FF11215D"
+        BorderThickness="2,0,2,2">
         <StackPanel>
 
             <Label Content="Client"

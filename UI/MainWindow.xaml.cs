@@ -223,7 +223,7 @@ namespace UI
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.Multiselect = false;
-            openFileDialog.Filter = "Jpeg files (*.jpg)|*.jpg|Png files (*.png)|*.png|Tif files (*.tif)|*.tif|Gif files (*.gif)|*.gif|Svg files (*.svg)|*.svg|Bitmap files (*.bitmap)|*.bitmap";
+            openFileDialog.Filter = "Jpeg files (*.jpg)|*.jpg|PNG files (*.png)|*.png|Tif files (*.tif)|*.tif|GIF files (*.gif)|*.gif|Svg files (*.svg)|*.svg|Bitmap files (*.bitmap)|*.bitmap";
             if (openFileDialog.ShowDialog() == true)
             {
                 foreach (string filename in openFileDialog.FileNames)

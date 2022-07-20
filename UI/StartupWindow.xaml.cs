@@ -15,6 +15,7 @@ namespace UI
 		public StartupWindow()
 		{
 			InitializeComponent();
+			txtb_Username.Focus();
 		}
 
 		private void brd_Head_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)

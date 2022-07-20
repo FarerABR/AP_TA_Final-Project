@@ -12,6 +12,7 @@ namespace UI.MVVM.View
 	/// </summary>
 	public partial class ClientConfigView : UserControl
 	{
+		private Client _client;
 		public ClientConfigView()
 		{
 			InitializeComponent();
@@ -27,21 +28,15 @@ namespace UI.MVVM.View
 				ip = "127.0.0.1";
 			}
 
-			Client client = new Client(Disconnected_Handler);
+			_client = new Client(Disconnected_Handler);
 			try
 			{
 				txtb_Status.Text = "Connecting to server...";
 				ConnectionStatus(false);
-				client.Connect(ip, Convert.ToInt32(port), Connected_Handler);
+				_client.Connect(ip, Convert.ToInt32(port), Connected_Handler);
 
-				Dispatcher.Invoke(() =>
-				{
-					MainWindow mainWindow = new MainWindow(ConfigWindow._user, null, client);
-					mainWindow.Show();
 
-					ConfigWindow.closeWindow();
-				});
-				
+
 			}
 			catch (Exception ex)
 			{
@@ -56,7 +51,13 @@ namespace UI.MVVM.View
 		}
 		public void Connected_Handler(object sender, string error)
 		{
+			Dispatcher.Invoke(() =>
+			{
+				MainWindow mainWindow = new MainWindow(ConfigWindow._user, null, _client);
+				mainWindow.Show();
 
+				ConfigWindow.closeWindow();
+			});
 		}
 
 		private void ConnectionStatus(bool value)

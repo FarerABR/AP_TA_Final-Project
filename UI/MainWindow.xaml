@@ -136,7 +136,7 @@
 			<Border Grid.Row="2"
 					Background="#2A3457"
 					CornerRadius="0,0,0,10"
-					BorderThickness="0,0,2,0"
+					BorderThickness="2"
 					BorderBrush="#FF11215D">
 
 				<StackPanel >
@@ -197,7 +197,9 @@
 			<Border Grid.Row="2"
 					Grid.Column="3"
 					CornerRadius="0,0,10,0"
-					Background="#888C46">
+					Background="#888C46"
+                    BorderBrush="#FF11215D"
+                    BorderThickness="2">
 				<Grid>
 
 					<!--#region Definition -->
@@ -221,6 +223,7 @@
 					<!--#region Send Box -->
 					<Border Grid.Row="1"
 					CornerRadius="0,0,10,0"
+                            Height="48"
 					Background="#F2EaEd">
 
 						<StackPanel VerticalAlignment="Stretch"
@@ -230,13 +233,13 @@
 
                             <TextBox x:Name="txt_Send"
 									 Width="670"
-									 Height="40"
+									 Height="35"
 									 Background="#FFA9A1A4"
 									 Text=""
                                      FontSize="25"/>
 
                             <Button x:Name="btn_Send"
-						Width="85"
+						Width="80"
 						Margin="5,0,0,0"
 						Content="Send"
 						Foreground="White"

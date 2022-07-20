@@ -11,7 +11,9 @@
 		AllowsTransparency="True"
 		Background="Transparent">
     <Border CornerRadius="10"
-			Background="#2A3457">
+			Background="#2A3457"
+            BorderBrush="#FF11215D"
+            BorderThickness="2">
         <Grid>
             <!--#region Grid Definition -->
             <Grid.RowDefinitions>

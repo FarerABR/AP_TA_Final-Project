@@ -104,7 +104,9 @@
 			<!--#region Page -->
 			<Border Grid.Row="1"
 					CornerRadius="0,0,10,10"
-					Background="#888C46">
+					Background="#888C46"
+                    BorderBrush="#FF11215D"
+                    BorderThickness="2,0,2,2">
 
 				<Border CornerRadius="30"
 						Margin="10,10,10,10"
@@ -156,6 +158,7 @@
 
 								<Button x:Name="btn_Login"
 									Content="Login"
+                                        IsDefault="True"
 									Margin="20,0,0,0"
 									Width="120"
 									Click="btn_LoginPage_Click"

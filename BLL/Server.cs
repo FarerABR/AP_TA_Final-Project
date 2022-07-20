@@ -70,8 +70,8 @@ namespace BLL
 			_serverSocket.Bind(new IPEndPoint(IPAddress.Parse(_serverIp), _serverPort));
 			_serverSocket.Listen(1);
 			_isRunning = true;
-			TransferSocket = _serverSocket.Accept();
-			// _serverSocket.BeginAccept(callback, null);
+			// TransferSocket = _serverSocket.Accept();
+			_serverSocket.BeginAccept(callback, null);
 		}
 		public void StartReAccept(SocketAcceptedHandler handler)
 		{
