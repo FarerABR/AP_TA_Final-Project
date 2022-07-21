@@ -101,10 +101,13 @@ namespace UI
 
             if (_client != null)
             {
-                // TODO: connection error
-                ConfigWindow configWindow = new ConfigWindow(_user);
-                configWindow.Show();
-                this.Close();
+                Dispatcher.Invoke(() =>
+                {
+                    // TODO: connection error
+                    ConfigWindow configWindow = new ConfigWindow(_user);
+                    configWindow.Show();
+                    this.Close();
+                });
             }
             else if (_server != null)
             {

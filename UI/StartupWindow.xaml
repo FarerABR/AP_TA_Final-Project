@@ -12,34 +12,34 @@
 		Height="425" Width="300">
 
 
-	<Border CornerRadius="10">
+    <Border CornerRadius="10">
 
-		<Grid>
+        <Grid>
 
-			<!--#region Grid Definition -->
-			<Grid.RowDefinitions>
-				<RowDefinition Height="25"/>
-				<RowDefinition />
-			</Grid.RowDefinitions>
-			<!--#endregion-->
+            <!--#region Grid Definition -->
+            <Grid.RowDefinitions>
+                <RowDefinition Height="25"/>
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <!--#endregion-->
 
-			<!--#region Header -->
-			<Border Grid.Row="0"
+            <!--#region Header -->
+            <Border Grid.Row="0"
 					x:Name="brd_Head"
 					Background="#A4A4BF"
 					CornerRadius="10,10,0,0"
 					MouseLeftButtonDown="brd_Head_MouseLeftButtonDown">
 
-				<Grid>
-					<Label Content="CATCHit"
+                <Grid>
+                    <Label Content="CATCHit"
 						   Foreground="#FF484848"
 						   FontWeight="SemiBold"
 						   Margin="5,0,0,0"/>
 
-					<StackPanel HorizontalAlignment="Right"
+                    <StackPanel HorizontalAlignment="Right"
 								Orientation="Horizontal">
 
-						<Button x:Name="btn_Minimize"
+                        <Button x:Name="btn_Minimize"
 								Height="20"
 								Width="20"
 								Content="🗕"
@@ -47,28 +47,28 @@
 								Foreground="#FF484848"
 								FontWeight="Bold"
 								Margin="0,0,10,0" Click="btn_Minimize_Click">
-							<Button.Style>
-								<Style TargetType="{x:Type Button}">
-									<Setter Property="Background" Value="Transparent"/>
-									<Setter Property="Template">
-										<Setter.Value>
-											<ControlTemplate TargetType="{x:Type Button}">
-												<Border Background="{TemplateBinding Background}">
-													<ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-												</Border>
-											</ControlTemplate>
-										</Setter.Value>
-									</Setter>
-									<Style.Triggers>
-										<Trigger Property="IsMouseOver" Value="True">
-											<Setter Property="Background" Value="Transparent"/>
-										</Trigger>
-									</Style.Triggers>
-								</Style>
-							</Button.Style>
-						</Button>
+                            <Button.Style>
+                                <Style TargetType="{x:Type Button}">
+                                    <Setter Property="Background" Value="Transparent"/>
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="{x:Type Button}">
+                                                <Border Background="{TemplateBinding Background}">
+                                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                                </Border>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Background" Value="Transparent"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
+                        </Button>
 
-						<Button x:Name="btn_Exit"
+                        <Button x:Name="btn_Exit"
 								Height="20"
 								Width="20"
 								Content="❌"
@@ -76,46 +76,46 @@
 								Foreground="#FF484848"
 								FontWeight="Bold"
 								Margin="0,0,10,0" Click="btn_Exit_Click">
-							<Button.Style>
-								<Style TargetType="{x:Type Button}">
-									<Setter Property="Background" Value="Transparent"/>
-									<Setter Property="Template">
-										<Setter.Value>
-											<ControlTemplate TargetType="{x:Type Button}">
-												<Border Background="{TemplateBinding Background}">
-													<ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-												</Border>
-											</ControlTemplate>
-										</Setter.Value>
-									</Setter>
-									<Style.Triggers>
-										<Trigger Property="IsMouseOver" Value="True">
-											<Setter Property="Background" Value="Transparent"/>
-										</Trigger>
-									</Style.Triggers>
-								</Style>
-							</Button.Style>
-						</Button>
-					</StackPanel>
-				</Grid>
-			</Border>
-			<!--#endregion-->
+                            <Button.Style>
+                                <Style TargetType="{x:Type Button}">
+                                    <Setter Property="Background" Value="Transparent"/>
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="{x:Type Button}">
+                                                <Border Background="{TemplateBinding Background}">
+                                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                                </Border>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Background" Value="Transparent"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
+                        </Button>
+                    </StackPanel>
+                </Grid>
+            </Border>
+            <!--#endregion-->
 
-			<!--#region Page -->
-			<Border Grid.Row="1"
+            <!--#region Page -->
+            <Border Grid.Row="1"
 					CornerRadius="0,0,10,10"
 					Background="#888C46"
                     BorderBrush="#FF11215D"
                     BorderThickness="2,0,2,2">
 
-				<Border CornerRadius="30"
+                <Border CornerRadius="30"
 						Margin="10,10,10,10"
 						Background="#FF11215D">
 
-					<Grid>
-						<StackPanel>
+                    <Grid>
+                        <StackPanel>
 
-							<Label Content="CATCHit"
+                            <Label Content="CATCHit"
 							HorizontalAlignment="Center"
 							VerticalAlignment="Center"
 							Margin="0,10,0,0"
@@ -128,46 +128,62 @@
                                    Content="Username"
                                    Foreground="AliceBlue"
                                    FontSize="14"/>
-                            
-                            <TextBox x:Name="txtb_Username"
-							 Height="40"
-                                     Margin="10,0,10,0"
-									 Background="#F2EaEd"
+                            <Border CornerRadius="10"
+                                    BorderBrush="GhostWhite"
+                                    BorderThickness="1"
+									Background="#F2EaEd"
+                                    Margin="10,0,10,0"
+									Height="40"
+                                    >
+
+                                <TextBox x:Name="txtb_Username"
 									 Text=""
+                                     BorderThickness="0"
+                                     Background="Transparent"
+                                     Margin="5,0,5,0"
 									 FontSize="25"/>
+                            </Border>
 
                             <Label Margin="10,20,10,0"
                                    Content="Password"
                                    Foreground="AliceBlue"
                                    FontSize="14"/>
-                            <TextBox x:Name="txtb_Password"
-							 Height="40"
-							 Margin="10,0,10,0"
-									 Background="#F2EaEd"
+                            <Border CornerRadius="10"
+                                    BorderBrush="GhostWhite"
+                                    BorderThickness="1"
+									Background="#F2EaEd"
+                                    Margin="10,0,10,0"
+									Height="40"
+                                    >
+                                <TextBox x:Name="txtb_Password"
+							         Margin="5,0,5,0"
+                                         BorderThickness="0"
+                                         Background="Transparent"
 									 Text=""
 									 FontSize="25"/>
-
-							<StackPanel Orientation="Horizontal"
+                            </Border>
+                            
+                            <StackPanel Orientation="Horizontal"
 										Margin="10,30,10,0">
 
-								<Button x:Name="btn_SignUp"
+                                <Button x:Name="btn_SignUp"
 									Content="Sign Up"
-									Width="120"
+									Width="110"
 									Height="50"
 									Style="{StaticResource SignUpBtnStyle}" Click="btn_SignUp_Click"/>
 
-								<Button x:Name="btn_Login"
+                                <Button x:Name="btn_Login"
 									Content="Login"
                                         IsDefault="True"
-									Margin="20,0,0,0"
-									Width="120"
+									Margin="35,0,0,0"
+									Width="110"
 									Click="btn_LoginPage_Click"
 									Height="50"
 									Style="{StaticResource LoginBtnStyle}"/>
 
-							</StackPanel>
+                            </StackPanel>
 
-							<Label x:Name="lbl_Error"
+                            <Label x:Name="lbl_Error"
 						   Content=""
 						   HorizontalAlignment="Center"
 						   VerticalAlignment="Center"
@@ -177,12 +193,12 @@
 						   FontSize="13"
 						   />
 
-						</StackPanel>
-					</Grid>
-				</Border>
-			</Border>
-			<!--#endregion-->
+                        </StackPanel>
+                    </Grid>
+                </Border>
+            </Border>
+            <!--#endregion-->
 
-		</Grid>
-	</Border>
+        </Grid>
+    </Border>
 </Window>

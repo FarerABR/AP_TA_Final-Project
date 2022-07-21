@@ -123,11 +123,13 @@
 
 				<TextBlock x:Name="txtb_Username"
 				   Text="Username"
+                           FontWeight="SemiBold"
 				   VerticalAlignment="Stretch"
 				   HorizontalAlignment="Stretch"
 						   Height="55"
+                           TextWrapping="WrapWithOverflow"
 				   Foreground="White"
-				   FontSize="22"
+				   FontSize="25"
 				   Margin="15,20,0,0"/>
 			</Border>
 			<!-- Username -->
@@ -143,6 +145,7 @@
 					<!-- Home Buttons -->
 					<RadioButton Content="Home"
 							 x:Name="Rbtn_Home"
+                                 IsChecked="True"
 							 Height="50"
 							 Foreground="White"
 							 FontSize="14"
@@ -230,13 +233,21 @@
 						HorizontalAlignment="Stretch"
 						Orientation="Horizontal"
 						Margin="5,5,5,5">
-
-                            <TextBox x:Name="txt_Send"
+                            <Border CornerRadius="10"
 									 Width="670"
 									 Height="35"
-									 Background="#FFA9A1A4"
+                                    Background="#FFA9A1A4"
+                                    BorderBrush="#FF11215D"
+                                    BorderThickness="1"
+                                    >
+                                
+                            <TextBox x:Name="txt_Send"
+                                     BorderThickness="0"
+                                     Margin="5,0,0,0"
+                                     Background="Transparent"
 									 Text=""
-                                     FontSize="25"/>
+                                     FontSize="23"/>
+                            </Border>
 
                             <Button x:Name="btn_Send"
 						Width="80"

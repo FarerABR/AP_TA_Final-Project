@@ -37,13 +37,21 @@
                    Foreground="AntiqueWhite"
                    Margin="45,20,0,0"
                    FontSize="14"/>
-
-            <TextBox x:Name="txt_Port"
+            
+            <Border CornerRadius="10"
+                    BorderBrush="WhiteSmoke"
+                    BorderThickness="1"
                      Width="210"
-                     Text="8080"
                      Height="30"
                      Background="#F2EaEd"
+                >
+            <TextBox x:Name="txt_Port"
+                     Background="Transparent"
+                     BorderThickness="0"
+                     Margin="5,0,5,0"
+                     Text="8080"
                      FontSize="20"/>
+            </Border>
 
             <Button x:Name="btn_Server"
                     Content="Start the server"
@@ -57,7 +65,7 @@
                        Text=""
                        TextWrapping="Wrap"
                        HorizontalAlignment="Center"
-                       Margin="0,35,0,0"
+                       Margin="0,30,0,0"
                        FontSize="15"
                        Foreground="Coral"/>
 

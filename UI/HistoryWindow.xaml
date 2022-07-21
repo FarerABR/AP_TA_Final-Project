@@ -10,36 +10,36 @@
 		AllowsTransparency="True"
 		ResizeMode="NoResize"
 		Background="Transparent">
-	<Border CornerRadius="10"
+    <Border CornerRadius="10"
 			Background="#F2EaEd"
             BorderBrush="#FF11215D"
             BorderThickness="2">
-	<Grid>
-			<!-- Definition -->
-			<Grid.RowDefinitions>
-				<RowDefinition Height="25"/>
-				<RowDefinition/>
-			</Grid.RowDefinitions>
-			<!-- Definition -->
+        <Grid>
+            <!-- Definition -->
+            <Grid.RowDefinitions>
+                <RowDefinition Height="25"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <!-- Definition -->
 
-			<!-- Head -->
-			<Border Grid.ColumnSpan="2"
+            <!-- Head -->
+            <Border Grid.ColumnSpan="2"
 					x:Name="brd_Head"
 					Background="#A4A4BF"
 					CornerRadius="10,10,0,0"
 					MouseLeftButtonDown="brd_Head_MouseLeftButtonDown">
 
-				<Grid Grid.Row="0"
+                <Grid Grid.Row="0"
 					  HorizontalAlignment="Stretch">
-					<Label Content="CATCHit"
+                    <Label Content="CATCHit"
 						   Foreground="#FF484848"
 						   FontWeight="SemiBold"
 						   Margin="10,0,0,0"/>
 
-					<StackPanel HorizontalAlignment="Right"
+                    <StackPanel HorizontalAlignment="Right"
 								Orientation="Horizontal">
 
-						<Button x:Name="btn_Minimize"
+                        <Button x:Name="btn_Minimize"
 								Height="20"
 								Width="20"
 								Content="🗕"
@@ -47,28 +47,28 @@
 								Foreground="#FF484848"
 								FontWeight="Bold"
 								Margin="0,0,10,0" Click="btn_Minimize_Click">
-							<Button.Style>
-								<Style TargetType="{x:Type Button}">
-									<Setter Property="Background" Value="Transparent"/>
-									<Setter Property="Template">
-										<Setter.Value>
-											<ControlTemplate TargetType="{x:Type Button}">
-												<Border Background="{TemplateBinding Background}">
-													<ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-												</Border>
-											</ControlTemplate>
-										</Setter.Value>
-									</Setter>
-									<Style.Triggers>
-										<Trigger Property="IsMouseOver" Value="True">
-											<Setter Property="Background" Value="Transparent"/>
-										</Trigger>
-									</Style.Triggers>
-								</Style>
-							</Button.Style>
-						</Button>
+                            <Button.Style>
+                                <Style TargetType="{x:Type Button}">
+                                    <Setter Property="Background" Value="Transparent"/>
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="{x:Type Button}">
+                                                <Border Background="{TemplateBinding Background}">
+                                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                                </Border>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Background" Value="Transparent"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
+                        </Button>
 
-						<Button x:Name="btn_Exit"
+                        <Button x:Name="btn_Exit"
 								Height="20"
 								Width="20"
 								Content="❌"
@@ -76,84 +76,95 @@
 								Foreground="#FF484848"
 								FontWeight="Bold"
 								Margin="0,0,10,0" Click="btn_Exit_Click">
-							<Button.Style>
-								<Style TargetType="{x:Type Button}">
-									<Setter Property="Background" Value="Transparent"/>
-									<Setter Property="Template">
-										<Setter.Value>
-											<ControlTemplate TargetType="{x:Type Button}">
-												<Border Background="{TemplateBinding Background}">
-													<ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-												</Border>
-											</ControlTemplate>
-										</Setter.Value>
-									</Setter>
-									<Style.Triggers>
-										<Trigger Property="IsMouseOver" Value="True">
-											<Setter Property="Background" Value="Transparent"/>
-										</Trigger>
-									</Style.Triggers>
-								</Style>
-							</Button.Style>
-						</Button>
-					</StackPanel>
-				</Grid>
-			</Border>
-			<!-- Head -->
-		
-			<Grid Grid.Row="1">
-				
-			<StackPanel>
+                            <Button.Style>
+                                <Style TargetType="{x:Type Button}">
+                                    <Setter Property="Background" Value="Transparent"/>
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="{x:Type Button}">
+                                                <Border Background="{TemplateBinding Background}">
+                                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                                </Border>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Background" Value="Transparent"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
+                        </Button>
+                    </StackPanel>
+                </Grid>
+            </Border>
+            <!-- Head -->
+
+            <Grid Grid.Row="1">
+
+                <StackPanel>
                     <Border CornerRadius="10"
                             Background="#2A3457"
                             HorizontalAlignment="Center"
                             Padding="10"
                             Margin="0,10,0,20">
-                        
-				<TextBlock x:Name="txtb_Username"
+
+                        <TextBlock x:Name="txtb_Username"
 						   Text="Username"
 						   HorizontalAlignment="Center"
 						   FontSize="30"
 						   FontWeight="SemiBold"
-						   Foreground="Bisque"/>
+						   Foreground="AliceBlue"/>
                     </Border>
 
-					<ListView x:Name="lw_Packets"
+                    <!--#region History list -->
+                    <Border CornerRadius="10"
+                            BorderBrush="Black"
+                            BorderThickness="1"
 							  Margin="10"
 							  Background="#888C46"
+                              Height="300"
+                            Padding="2"
+                            >
+                        <ListView x:Name="lw_Packets"
+                                  Background="Transparent"
+                                  BorderThickness="0"
 							  FontSize="15"
 							  IsHitTestVisible="True"
                               Foreground="Black"
+                              
                               ScrollViewer.CanContentScroll="True"
                               ScrollViewer.VerticalScrollBarVisibility="Hidden"
-                              Height="300"
 							  ItemsSource="{Binding _packets}" d:ItemsSource="{d:SampleData ItemCount=5}">
-						<ListView.View>
-							<GridView>
-                                <GridViewColumn Header="Type"
+                            <ListView.View>
+                                <GridView>
+                                    <GridViewColumn Header="Type"
 												DisplayMemberBinding="{Binding PacketType}"
 												Width="90"/>
-								<GridViewColumn Header="Id"
+                                    <GridViewColumn Header="Id"
 												DisplayMemberBinding="{Binding Id}"
 												Width="100"/>
-								<GridViewColumn Header="Name"
+                                    <GridViewColumn Header="Name"
 												DisplayMemberBinding="{Binding Name}"
 												Width="190"/>
-								<GridViewColumn Header="Extention"
+                                    <GridViewColumn Header="Extention"
 												DisplayMemberBinding="{Binding Extention}"
 												Width="100"/>
-								<GridViewColumn Header="Size"
+                                    <GridViewColumn Header="Size"
 												DisplayMemberBinding="{Binding Size}"
 												Width="90"/>
-								<GridViewColumn Header="Send Time"
+                                    <GridViewColumn Header="Send Time"
 												DisplayMemberBinding="{Binding SendTime}"
 												Width="190"/>
-							</GridView>
-						</ListView.View>
-					</ListView>
-				</StackPanel>
-			</Grid>
-		</Grid>
-		
-	</Border>
+                                </GridView>
+                            </ListView.View>
+                        </ListView>
+                    </Border>
+                    <!--#endregion-->
+                </StackPanel>
+            </Grid>
+        </Grid>
+
+    </Border>
 </Window>
