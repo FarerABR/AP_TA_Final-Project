@@ -4,6 +4,7 @@
     <TargetFramework>net6.0-windows</TargetFramework>
     <UseWPF>true</UseWPF>
     <ApplicationIcon>Pic\icon.ico</ApplicationIcon>
+    <AssemblyName>CATCHit</AssemblyName>
   </PropertyGroup>
   <ItemGroup>
     <None Remove="Pic\attach-file.ico" />
