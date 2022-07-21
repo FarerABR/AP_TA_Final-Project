@@ -32,7 +32,10 @@ namespace BLL
 			string path = @".\data\userdata.json";
 			string strData = File.ReadAllText(path);
 			if (strData == "")
+			{
+				UserList.Add(new User(0, "admin", "root"));
 				return;
+			}
 			UserList = JsonConvert.DeserializeObject<List<User>>(strData);
 		}
 
