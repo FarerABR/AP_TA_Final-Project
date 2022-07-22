@@ -115,7 +115,8 @@
 						   HorizontalAlignment="Center"
 						   FontSize="30"
 						   FontWeight="SemiBold"
-						   Foreground="AliceBlue"/>
+						   Foreground="AliceBlue"
+                                   FontFamily="/Fonts/#poppins"/>
                     </Border>
 
                     <!--#region History list -->
@@ -130,10 +131,10 @@
                         <ListView x:Name="lw_Packets"
                                   Background="Transparent"
                                   BorderThickness="0"
-							  FontSize="15"
+							  FontSize="13"
 							  IsHitTestVisible="True"
                               Foreground="Black"
-                              
+                              FontFamily="/Fonts/#poppins"
                               ScrollViewer.CanContentScroll="True"
                               ScrollViewer.VerticalScrollBarVisibility="Hidden"
 							  ItemsSource="{Binding _packets}" d:ItemsSource="{d:SampleData ItemCount=5}">

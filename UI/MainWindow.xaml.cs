@@ -31,7 +31,7 @@ namespace UI
             {
                 transfer = new Transfer(server, true, Message_Handler, File_Handler, connection_Failed);
                 _server = server;
-                txtb_HeadStatus.Text = $"Started the server with ip: {server.Ip}:{server.Port}";
+                txtb_HeadStatus.Text = $"Started the server with IP: {server.Ip}:{server.Port}";
             }
             else
             {

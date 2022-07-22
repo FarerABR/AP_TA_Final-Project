@@ -108,7 +108,9 @@
 
                 <StackPanel>
                     <Ellipse Width="150"
-                             Height="150">
+                             Height="150"
+                             StrokeThickness="1"
+                             Stroke="#2A3457">
                         <Ellipse.Fill>
                             <ImageBrush ImageSource=".\Pic\High_quality.jpg"/>
                         </Ellipse.Fill>
@@ -119,13 +121,15 @@
 					   FontSize="20"
                        Foreground="Black"
 					   Text="Hi"
-                        Margin="0,10,0,0"/>
+                        Margin="0,10,0,0"
+                        FontFamily="/Fonts/#poppins"/>
 
                     <TextBlock
 					   HorizontalAlignment="Center"
 					   FontSize="20"
                        Foreground="Black"
-					   Text="My name is Ali Baghaee Ravari"/>
+					   Text="My name is Ali Baghaee Ravari"
+                        FontFamily="/Fonts/#poppins"/>
                     
                     <TextBlock
 					   HorizontalAlignment="Center"
@@ -133,14 +137,16 @@
                        Foreground="Black"
                         TextAlignment="Justify"
                        TextWrapping="WrapWithOverflow"
+                        FontFamily="/Fonts/#poppins"
 					   Text="and this is my Advanced-Programing project"/>
 
                     <TextBlock
 					   HorizontalAlignment="Center"
-					   FontSize="20"
+					   FontSize="19"
                        Foreground="Black"
                         TextAlignment="Justify"
                        TextWrapping="WrapWithOverflow"
+                        FontFamily="/Fonts/#poppins"
 					   Text="you can contact me with @FarerABR in everywhere :)"
                         />
 
@@ -149,6 +155,7 @@
 					   FontSize="20"
                        Foreground="Black"
                        TextWrapping="WrapWithOverflow"
+                        FontFamily="/Fonts/#poppins"
 					   Text="Project repository:"/>
 
                     <TextBlock
@@ -156,6 +163,7 @@
 					   FontSize="20"
                        TextWrapping="WrapWithOverflow"
                        Foreground="#FF5555D2"
+                        FontFamily="/Fonts/#poppins"
 					   Text="">
                         <Hyperlink x:Name="hl_Ripository"
                                    NavigateUri="https://github.com/FarerABR/AP_TA_Final-Project"

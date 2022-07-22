@@ -11,41 +11,41 @@
 		Background="Transparent"
 		AllowsTransparency="True">
 
-	<Border Background="#2A3457"
+    <Border Background="#2A3457"
 			CornerRadius="10">
-		<Grid>
+        <Grid>
 
-			<!-- Definition -->
-			<Grid.ColumnDefinitions>
-				<ColumnDefinition Width="150"/>
-				<ColumnDefinition/>
-			</Grid.ColumnDefinitions>
+            <!-- Definition -->
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="150"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
 
-			<Grid.RowDefinitions>
-				<RowDefinition Height="25"/>
-				<RowDefinition Height="75"/>
-				<RowDefinition/>
-			</Grid.RowDefinitions>
-			<!-- Definition -->
+            <Grid.RowDefinitions>
+                <RowDefinition Height="25"/>
+                <RowDefinition Height="75"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <!-- Definition -->
 
-			<!-- Head -->
-			<Border Grid.ColumnSpan="2"
+            <!-- Head -->
+            <Border Grid.ColumnSpan="2"
 					x:Name="brd_Head"
 					Background="#A4A4BF"
 					CornerRadius="10,10,0,0"
 					MouseLeftButtonDown="brd_Head_MouseLeftButtonDown">
 
-				<Grid Grid.Row="0"
+                <Grid Grid.Row="0"
 					  HorizontalAlignment="Stretch">
-					<Label Content="CATCHit"
+                    <Label Content="CATCHit"
 						   Foreground="#FF484848"
 						   FontWeight="SemiBold"
 						   Margin="10,0,0,0"/>
 
-					<StackPanel HorizontalAlignment="Right"
+                    <StackPanel HorizontalAlignment="Right"
 								Orientation="Horizontal">
 
-						<Button x:Name="btn_Minimize"
+                        <Button x:Name="btn_Minimize"
 								Height="20"
 								Width="20"
 								Content="🗕"
@@ -53,28 +53,28 @@
 								Foreground="#FF484848"
 								FontWeight="Bold"
 								Margin="0,0,10,0" Click="btn_Minimize_Click">
-							<Button.Style>
-								<Style TargetType="{x:Type Button}">
-									<Setter Property="Background" Value="Transparent"/>
-									<Setter Property="Template">
-										<Setter.Value>
-											<ControlTemplate TargetType="{x:Type Button}">
-												<Border Background="{TemplateBinding Background}">
-													<ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-												</Border>
-											</ControlTemplate>
-										</Setter.Value>
-									</Setter>
-									<Style.Triggers>
-										<Trigger Property="IsMouseOver" Value="True">
-											<Setter Property="Background" Value="Transparent"/>
-										</Trigger>
-									</Style.Triggers>
-								</Style>
-							</Button.Style>
-						</Button>
+                            <Button.Style>
+                                <Style TargetType="{x:Type Button}">
+                                    <Setter Property="Background" Value="Transparent"/>
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="{x:Type Button}">
+                                                <Border Background="{TemplateBinding Background}">
+                                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                                </Border>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Background" Value="Transparent"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
+                        </Button>
 
-						<Button x:Name="btn_Exit"
+                        <Button x:Name="btn_Exit"
 								Height="20"
 								Width="20"
 								Content="❌"
@@ -82,46 +82,46 @@
 								Foreground="#FF484848"
 								FontWeight="Bold"
 								Margin="0,0,10,0" Click="btn_Exit_Click">
-							<Button.Style>
-								<Style TargetType="{x:Type Button}">
-									<Setter Property="Background" Value="Transparent"/>
-									<Setter Property="Template">
-										<Setter.Value>
-											<ControlTemplate TargetType="{x:Type Button}">
-												<Border Background="{TemplateBinding Background}">
-													<ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-												</Border>
-											</ControlTemplate>
-										</Setter.Value>
-									</Setter>
-									<Style.Triggers>
-										<Trigger Property="IsMouseOver" Value="True">
-											<Setter Property="Background" Value="Transparent"/>
-										</Trigger>
-									</Style.Triggers>
-								</Style>
-							</Button.Style>
-						</Button>
-					</StackPanel>
-				</Grid>
-			</Border>
-			<!-- Head -->
-			
-			<!--#region Header IP -->
-			<Border Grid.Row="1"
+                            <Button.Style>
+                                <Style TargetType="{x:Type Button}">
+                                    <Setter Property="Background" Value="Transparent"/>
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="{x:Type Button}">
+                                                <Border Background="{TemplateBinding Background}">
+                                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                                </Border>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Background" Value="Transparent"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
+                        </Button>
+                    </StackPanel>
+                </Grid>
+            </Border>
+            <!-- Head -->
+
+            <!--#region Header IP -->
+            <Border Grid.Row="1"
 					Grid.Column="1"
 					Background="#2A3457"
 					BorderBrush="#FF11215D"
 					BorderThickness="0,0,0,2">
-				
-			</Border>
-			<!--#region -->
 
-			<!-- Username -->
-			<Border Grid.Row="1"
+            </Border>
+            <!--#region -->
+
+            <!-- Username -->
+            <Border Grid.Row="1"
 					Background="#16235A">
 
-				<TextBlock x:Name="txtb_Username"
+                <TextBlock x:Name="txtb_Username"
 				   Text="Username"
                            FontWeight="SemiBold"
 				   VerticalAlignment="Stretch"
@@ -130,20 +130,21 @@
                            TextWrapping="WrapWithOverflow"
 				   Foreground="White"
 				   FontSize="25"
-				   Margin="15,20,0,0"/>
-			</Border>
-			<!-- Username -->
+				   Margin="15,20,0,0"
+                           FontFamily="/Fonts/#poppins"/>
+            </Border>
+            <!-- Username -->
 
-			<!-- Menu -->
-			<Border Grid.Row="2"
+            <!-- Menu -->
+            <Border Grid.Row="2"
 					Background="#2A3457"
 					CornerRadius="0,0,0,10"
 					BorderThickness="2"
 					BorderBrush="#FF11215D">
 
-				<StackPanel >
-					<!-- Home Buttons -->
-					<RadioButton Content="Home"
+                <StackPanel >
+                    <!-- Home Buttons -->
+                    <RadioButton Content="Home"
 							 x:Name="Rbtn_Home"
                                  IsChecked="True"
 							 Height="50"
@@ -152,31 +153,31 @@
 							 Style="{StaticResource MenuBtnStyle}"
 							 Click="Rbtn_Home_Click"/>
 
-					<StackPanel x:Name="stk_Home">
+                    <StackPanel x:Name="stk_Home">
 
-						<Button Content="Video"
+                        <Button Content="Video"
 							x:Name="btn_Video"
                                 Click="btn_Video_Click"
 							Style="{StaticResource HomeBtnStyle}"/>
 
-						<Button Content="Audio"
+                        <Button Content="Audio"
 							x:Name="btn_Audio"
                                 Click="btn_Audio_Click"
 							Style="{StaticResource HomeBtnStyle}"/>
 
-						<Button Content="Image"
+                        <Button Content="Image"
 							x:Name="btn_Image"
                                 Click="btn_Image_Click"
 							Style="{StaticResource HomeBtnStyle}"/>
 
-						<Button Content="All Files"
+                        <Button Content="All Files"
 							x:Name="btn_AllFiles"
                                 Click="btn_AllFiles_Click"
 							Style="{StaticResource HomeBtnStyle}"/>
-					</StackPanel>
-					<!-- Home buttons -->
+                    </StackPanel>
+                    <!-- Home buttons -->
 
-					<RadioButton Content="History"
+                    <RadioButton Content="History"
 							 x:Name="Rbtn_History"
 							 Height="50"
 							 Foreground="White"
@@ -184,7 +185,7 @@
 							 Style="{StaticResource MenuBtnStyle}"
 							 Click="Rbtn_History_Click"/>
 
-					<RadioButton Content="More"
+                    <RadioButton Content="More"
 							 x:Name="Rbtn_More"
 							 Height="50"
 							 Foreground="White"
@@ -192,44 +193,44 @@
 							 Style="{StaticResource MenuBtnStyle}"
 							 Click="Rbtn_More_Click"/>
 
-				</StackPanel>
-				<!-- Menu -->
-			</Border>
+                </StackPanel>
+                <!-- Menu -->
+            </Border>
 
-			<!--#region Home -->
-			<Border Grid.Row="2"
+            <!--#region Home -->
+            <Border Grid.Row="2"
 					Grid.Column="3"
 					CornerRadius="0,0,10,0"
 					Background="#888C46"
                     BorderBrush="#FF11215D"
                     BorderThickness="2">
-				<Grid>
+                <Grid>
 
-					<!--#region Definition -->
-					<Grid.RowDefinitions>
-						<RowDefinition Height="510"/>
-						<RowDefinition Height="Auto"/>
-					</Grid.RowDefinitions>
-					<!--#endregion-->
+                    <!--#region Definition -->
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="510"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <!--#endregion-->
 
-					<!--#region Chat Scroll-->
-					<Border Grid.Row="0">
-						<ScrollViewer Name="scv_Chat" VerticalScrollBarVisibility="Hidden">
+                    <!--#region Chat Scroll-->
+                    <Border Grid.Row="0">
+                        <ScrollViewer Name="scv_Chat" VerticalScrollBarVisibility="Hidden">
 
-							<StackPanel x:Name="stk_Chat" VerticalAlignment="Bottom">
+                            <StackPanel x:Name="stk_Chat" VerticalAlignment="Bottom">
 
-							</StackPanel>
-						</ScrollViewer>
-					</Border>
-					<!--#endregion-->
+                            </StackPanel>
+                        </ScrollViewer>
+                    </Border>
+                    <!--#endregion-->
 
-					<!--#region Send Box -->
-					<Border Grid.Row="1"
+                    <!--#region Send Box -->
+                    <Border Grid.Row="1"
 					CornerRadius="0,0,10,0"
                             Height="48"
 					Background="#F2EaEd">
 
-						<StackPanel VerticalAlignment="Stretch"
+                        <StackPanel VerticalAlignment="Stretch"
 						HorizontalAlignment="Stretch"
 						Orientation="Horizontal"
 						Margin="5,5,5,5">
@@ -240,13 +241,14 @@
                                     BorderBrush="#FF11215D"
                                     BorderThickness="1"
                                     >
-                                
-                            <TextBox x:Name="txt_Send"
+
+                                <TextBox x:Name="txt_Send"
                                      BorderThickness="0"
                                      Margin="5,0,0,0"
                                      Background="Transparent"
 									 Text=""
-                                     FontSize="23"/>
+                                     FontSize="23"
+                                     FontFamily="/Fonts/#poppins"/>
                             </Border>
 
                             <Button x:Name="btn_Send"
@@ -257,18 +259,18 @@
                                     IsDefault="True"
 						Style="{StaticResource SendBtnStyle}" Click="btn_Send_Click">
 
-							</Button>
-						</StackPanel>
-					</Border>
-					<!--#endregion-->
+                            </Button>
+                        </StackPanel>
+                    </Border>
+                    <!--#endregion-->
 
-				</Grid>
-			</Border>
-			<!--#endregion-->
+                </Grid>
+            </Border>
+            <!--#endregion-->
 
-			<Grid Grid.Row="1"
+            <Grid Grid.Row="1"
 				  Grid.Column="1">
-				<TextBlock x:Name="txtb_HeadStatus"
+                <TextBlock x:Name="txtb_HeadStatus"
 						   Margin="10"
 						   HorizontalAlignment="Center"
 						   VerticalAlignment="Stretch"
@@ -276,8 +278,9 @@
 						   FontSize="35"
 						   FontWeight="SemiBold"
 						   Foreground="AliceBlue"
+                           FontFamily="/Fonts/#poppins"
 						   />
-			</Grid>
-		</Grid>
-	</Border>
+            </Grid>
+        </Grid>
+    </Border>
 </Window>

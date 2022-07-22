@@ -13,7 +13,8 @@
                                    VerticalAlignment="Center"
                                    HorizontalAlignment="Center"
                                    FontSize="16"
-                                   FontWeight="SemiBold"/>
+                                   FontWeight="SemiBold"
+                                   FontFamily="/Fonts/#poppins"/>
                     </Border>
                 </ControlTemplate>
             </Setter.Value>

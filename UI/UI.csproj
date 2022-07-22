@@ -7,6 +7,7 @@
     <AssemblyName>CATCHit</AssemblyName>
   </PropertyGroup>
   <ItemGroup>
+    <None Remove="Fonts\Poppins-Regular.ttf" />
     <None Remove="Pic\attach-file.ico" />
     <None Remove="Pic\High_quality.jpg" />
   </ItemGroup>
@@ -14,13 +15,11 @@
     <Content Include="Pic\icon.ico" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Fonts\" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\DAL\DAL.csproj" />
     <ProjectReference Include="..\BLL\BLL.csproj" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Fonts\Poppins-Regular.ttf" />
     <Resource Include="Pic\attach-file.ico" />
     <Resource Include="Pic\High_quality.jpg" />
   </ItemGroup>
